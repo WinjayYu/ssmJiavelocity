@@ -16,6 +16,7 @@
 <link href="$webRoot/resources/css/plugins/iCheck/custom.css" rel="stylesheet">
 <link href="$webRoot/resources/css/plugins/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css" rel="stylesheet">
 <link href="$webRoot/resources/css/plugins/poshytip/tip-yellowsimple/tip-yellowsimple.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
 
 </head>
 
@@ -77,7 +78,7 @@
     		<div class="lead">
     			<div class="top_bga_1"></div>
            		<div class="top_bga_2">
-            	<ul>
+            	<ul class="menu clear">
                     <a href="$!webRoot/part/contact-us"><li>联系我们</li></a>
                     <a href="$!webRoot/part/myInfo"><li>我的信息</li></a>    
                     <a href="$!webRoot/part/more-job"><li>职位列表</li></a>
@@ -99,7 +100,7 @@
 </div>
 <div class="center_a">
 	<div class="center_blank"></div>
-	<div class="center_b">
+	<div class="center_b clear">
     	<div class="center_gg">
         	<div class="center_gga">
             	<div class="center_gga_1">招聘信息</div>
@@ -115,7 +116,7 @@
     	</div>
         
         <div class="center_js">
-        	<div class="center_gga">新闻</div>
+        	<div class="center_gga" style="text-align: left;">新闻</div>
             <div class="banner">
             	<!--  banner图片开始 -->
             	<div class="main_visual">
@@ -162,7 +163,7 @@
 </div>
 <!-- 招聘信息结束  -->
 <!-- 内容开始 -->
-<div class="nr">
+<div class="nr clear">
 	<div class="newPos">
     	<div class="newPos_a">最新职位</div>
         <div class="newPos_c new_job">
@@ -180,7 +181,7 @@
         	<dl >
         	 <div class="slideBox">
         		<dt style="display: block;" class="login-part">
-        			<span style="width:486px;" class="on">我要登录</span>
+        			<span class="on">我要登录</span>
         		</dt>
         		<dt style="display: none;" class="userInfo-part">
         			<span style="width:486px" class="on">我的信息</span>

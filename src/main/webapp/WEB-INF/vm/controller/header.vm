@@ -9,6 +9,7 @@
 	<meta name="renderer" content="webkit|ie-comp|ie-stand">
     <!--浏览器头部ico图标-->
     <link rel="shortcut icon"  type="image/x-icon"  href="$webRoot/resources/imgs/icons/favico.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
 
 	<!--后台核心CSS，每个页面都需要引入-->
     <link href="$webRoot/resources/css/plugins/bootstrap/bootstrap.min.css?v=3.3.4" rel="stylesheet">

@@ -8,14 +8,26 @@
     list-style-type: none;
 }
 
-body {
-    padding: 0;
-    margin: 0;
-    font-family: "宋体";
-    font-size: 12px;
-    color: #666;
-    background: #eee
-}
+
+/* Reset */
+body, h1, h2, h3, h4, h5, h6, p, ul, ol, dl, dd, figure, menu, input, fieldset, textarea, button, select, th, td, div, span, header, nav, footer { margin: 0; padding: 0; -webkit-text-size-adjust: none; }
+h1, h2, h3, h4, h5, h6, b, strong { font-weight: normal; font-size: 100%; }
+li { list-style: none; }
+em, i { font-style: normal; }
+a, a:visited { border: none; text-decoration: none; }
+fieldset, img, input { border: none; }
+input, textarea { outline: none; resize: none;}
+body { word-wrap: break-word; font-size: 16px; font-family: /* En */ "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "Ubuntu", "Helvetica Neue", "Helvetica", "Arial", /* Cn */ "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei UI", "Microsoft YaHei", "Source Han Sans CN", "sans-serif"; line-height: 1.6; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); -webkit-touch-callout: none; -webkit-user-select: none; }
+
+/* public */
+.clear { zoom: 1; }
+.clear:before, .clear:after { display: block; content: ""; }
+.clear:after { clear: both; }
+.fl { float: left; display: block; }
+.fr { float: right; display: block; }
+.none { display: none !important; }
+input[type="search"]::-webkit-search-decoration, input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-results-button, input[type="search"]::-webkit-search-results-decoration { display: none; }
+
 
 img {
     border: 0;
@@ -82,7 +94,7 @@ a:hover {
 }
 
 .bs_bg {
-    width: 994px;
+    max-width: 994px;
     margin: 0 auto;
 }
 
@@ -196,7 +208,7 @@ a:hover {
 /*center*/
 .center_a {
     width: 100%;
-    height: 350px;
+    /*height: 350px;*/
 }
 
 .center_blank {
@@ -205,13 +217,15 @@ a:hover {
 }
 
 .center_b {
-    width: 1000px;
-    height: 330px;
+    width: 100%;
+    /*height: 330px;*/
     margin: auto;
+    text-align: center;
 }
 
 .center_gg {
-    width: 611px;
+    /*width: 611px;*/
+    min-width: 375px;
     height: 328px;
     float: left;
     background: #fff;
@@ -238,7 +252,7 @@ a:hover {
 }
 
 .center_ggb {
-    width: 560px;
+    /*width: 560px;*/
     height: 270px;
     padding: 10px 10px 10px 35px;
 }
@@ -264,7 +278,7 @@ a:hover {
 }
 
 .center_ggc {
-    width: 500px;
+    /*width: 500px;*/
     height: 39px;
     float: left
 }
@@ -285,7 +299,7 @@ a:hover {
     height: 328px;
     float: left;
     background: #fff;
-    margin-left: 10px;
+    /*margin-left: 10px;*/
     border: 1px solid #d7d7d7;
 }
 
@@ -387,13 +401,14 @@ div.flicking_con a.on {
 
 /*内容部分*/
 .nr {
-    width: 1000px;
+    /*width: 1000px;*/
     margin: auto
 }
 
 /*最新职位*/
 .newPos {
-    width: 243px;
+    /*width: 243px;*/
+    min-width: 375px;
     height: 368px;
     border: 1px solid #d7d7d7;
     float: left;
@@ -467,12 +482,12 @@ div.flicking_con a.on {
 
 /*注册*/
 .bang {
-    width: 488px;
+    min-width: 375px;
     height: 368px;
     border: 1px solid #d7d7d7;
     float: left;
     background: url(../images/bang_pp.jpg) repeat-x #fff;
-    margin: 0 10px;
+    /*margin: 0 10px;*/
 }
 
 /*切换标签样式*/
@@ -647,8 +662,8 @@ div.flicking_con a.on {
 
 /* 帮众 */
 .bz {
-    width: 1000px;
-    height: 292px;
+    /*width: 1000px;*/
+    /*height: 292px;*/
     background: #fff;
     border-top: 1px solid #d9d9d9;
     border-bottom: 1px solid #d9d9d9;
@@ -656,8 +671,8 @@ div.flicking_con a.on {
 }
 
 .bz_a {
-    width: 199px;
-    height: 252px;
+    /*width: 199px;*/
+    /*height: 252px;*/
     border-right: 1px solid #d9d9d9;
     float: left;
     background: #fff
@@ -1605,6 +1620,17 @@ td {
 
 .search-div {
     float: right;
-    margin-left: 800px;
+    margin-left: 54%;
     margin-bottom: 20px;
+}
+
+@media screen and (max-width: 400px){
+    .top_bga_2 ul a li {
+        font-size: 15px;
+    }
+
+    .top_bga_1 {
+        height: 28px;
+    }
+
 }
