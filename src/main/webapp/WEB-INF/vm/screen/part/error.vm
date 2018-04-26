@@ -1,0 +1,117 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>易找网 — 首页</title>
+<link href="$!webRoot/resources/css/select2.css" rel="stylesheet"/>
+<link rel="stylesheet" href="$!webRoot/resources/css/style.css" />
+<link href="$webRoot/resources/css/plugins/bootstrap/bootstrap.min.css" rel="stylesheet">
+<link href="$webRoot/resources/css/plugins/style/style.min.css" rel="stylesheet">
+<link href="$webRoot/resources/css/plugins/font-awesome/font-awesome.min.css" rel="stylesheet">
+<link href="$webRoot/resources/css/plugins/bootstrap-table/bootstrap-table.css" rel="stylesheet">
+<link href="$webRoot/resources/css/plugins/toastr/toastr.min.css" rel="stylesheet">
+<link href="$webRoot/resources/css/plugins/sweetalert/sweetalert.css" rel="stylesheet">
+<link href="$webRoot/resources/css/plugins/bootstrapvalidator/bootstrapValidator.css" rel="stylesheet">
+<link href="$webRoot/resources/css/plugins/iCheck/custom.css" rel="stylesheet">
+<link href="$webRoot/resources/css/plugins/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css" rel="stylesheet">
+<link href="$webRoot/resources/css/plugins/poshytip/tip-yellowsimple/tip-yellowsimple.css" rel="stylesheet">
+
+</head>
+
+<style>
+.logo {
+	float: left;
+	width : 20%;
+	height : 108px;
+	z-index: -1;
+}
+.logo img{
+	/*width: 100%;*/
+	height: 100%;
+}
+.lead{ 
+	float: right;
+	width: 80%;
+}
+.lead li{
+	background-color: #333333;
+
+}
+.regist-icon {
+	font-size: 128px;
+}
+.regist-icon a :HOVER {
+	background-color: #ffffff;
+	color: #6cb0d8;
+}
+#user-type {
+	float : right;
+	margin-top: -15px;
+	margin-right: 15px;
+}
+#user-name {
+	margin-top: 10px;
+	text-align: center;
+}
+.userInfo {
+	padding-bottom: 50px;
+}
+.logoff-div {
+	float: right;
+	margin-right: -230px;
+	margin-top: -140px;
+}
+h3 {
+	color: red;
+}
+</style>
+<body class="bs_bg">
+<!-- top内容开始 -->
+<div class="top">
+	<div class="top_a">
+    	<div class="top_a3"><span style="color: red;">$!user.nickName</span>您好，欢迎来到易找兼职网！ <span style="font-size:14px; font-weight:bold; color:#424242">合肥市&nbsp;</span></div>
+    	<div class="top_a1">
+        </div>
+    </div>
+    <div class="top_bg">
+    	<div class="top_bga">
+    		<div class="logo"><a href="$!webRoot/part/index"><img src="$!webRoot/resources/images/logo.jpg"></img></a></div>
+    		<div class="lead">
+    			<div class="top_bga_1"></div>
+           		<div class="top_bga_2">
+            	<ul>
+                    <a href="$!webRoot/part/contact-us"><li>联系我们</li></a>
+                    <a href="$!webRoot/part/myInfo"><li>我的信息</li></a>    
+                    <a href="$!webRoot/part/more-job"><li>职位列表</li></a>
+                    <a href="index.html"><li><i class="fa "></i>&nbsp;主页</li></a>
+                </ul>
+            </div>
+    		</div>
+        	
+        </div>
+    </div>
+</div>
+<!-- top内容结束 -->
+<div class="center_a">
+	<div class="center_blank"></div>
+	<div class="center_b">
+<h3>
+ 抱歉，请先登录再查看。
+</h3>
+</div>
+</div>
+</body>
+<script type="text/javascript" src="$!webRoot/resources/js/jquery-2.1.1.min.js"></script>
+<script src="$webRoot/resources/js/plugins/bootstrap/bootstrap.min.js"></script>
+<script type="text/javascript" src="$!webRoot/resources/js/demo-web/common/utils/modalUtil.js"></script>
+<script type="text/javascript" src="$!webRoot/resources/js/plugins/sweetalert/sweetalert.min.js"></script>
+<script type="text/javascript" src="$!webRoot/resources/js/demo-web/common/utils/ajaxUtil.js"></script>
+<script type="text/javascript" src="$!webRoot/resources/js/demo-web/common/utils/ajaxUtil.js"></script>
+<script type="text/javascript" src="$!webRoot/resources/js/search/area.js"></script>
+<script type="text/javascript" src="$!webRoot/resources/js/search/location.js"></script>
+<script type="text/javascript" src="$!webRoot/resources/js/search/select2.js"></script>
+<script type="text/javascript" src="$!webRoot/resources/js/search/select2_locale_zh-CN.js"></script>
+<script type="text/javascript" src="$!webRoot/resources/js/jquery.touchSlider.js"></script>
+<script type="text/javascript" src="$!webRoot/resources/js/js.js"></script>
+<script type="text/javascript" src="$!webRoot/resources/js/ks-switch.pack.js"></script>
+</html>

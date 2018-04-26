@@ -1,0 +1,297 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>易找网 — 首页</title>
+<link href="$!webRoot/resources/css/select2.css" rel="stylesheet"/>
+<link rel="stylesheet" href="$!webRoot/resources/css/style.css" />
+<link href="$webRoot/resources/css/plugins/bootstrap/bootstrap.min.css" rel="stylesheet">
+<link href="$webRoot/resources/css/plugins/style/style.min.css" rel="stylesheet">
+<link href="$webRoot/resources/css/plugins/font-awesome/font-awesome.min.css" rel="stylesheet">
+<link href="$webRoot/resources/css/plugins/bootstrap-table/bootstrap-table.css" rel="stylesheet">
+<link href="$webRoot/resources/css/plugins/toastr/toastr.min.css" rel="stylesheet">
+<link href="$webRoot/resources/css/plugins/sweetalert/sweetalert.css" rel="stylesheet">
+<link href="$webRoot/resources/css/plugins/bootstrapvalidator/bootstrapValidator.css" rel="stylesheet">
+<link href="$webRoot/resources/css/plugins/iCheck/custom.css" rel="stylesheet">
+<link href="$webRoot/resources/css/plugins/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css" rel="stylesheet">
+<link href="$webRoot/resources/css/plugins/poshytip/tip-yellowsimple/tip-yellowsimple.css" rel="stylesheet">
+
+</head>
+
+<style>
+.logo {
+	float: left;
+	width : 20%;
+	height : 108px;
+	z-index: -1;
+}
+.logo img{
+	/*width: 100%;*/
+	height: 100%;
+}
+.lead{ 
+	float: right;
+	width: 80%;
+}
+.lead li{
+	background-color: #333333;
+
+}
+.regist-icon {
+	font-size: 128px;
+}
+.regist-icon a :HOVER {
+	background-color: #ffffff;
+	color: #6cb0d8;
+}
+#user-type {
+	float : right;
+	margin-top: -15px;
+	margin-right: 15px;
+}
+#user-name {
+	margin-top: 10px;
+	text-align: center;
+}
+.userInfo {
+	padding-bottom: 50px;
+}
+.logoff-div {
+	float: right;
+	margin-right: -230px;
+	margin-top: -140px;
+}
+.search-div {
+	float:right;
+	margin-left:800px;
+	margin-bottom: 20px;
+}
+</style>
+
+<body class="bs_bg">
+<!-- top内容开始 -->
+<div class="top">
+	<div class="top_a">
+    	<div class="top_a3"><span style="color: red;">$!user.nickName</span>您好，欢迎来到易找兼职网！ <span style="font-size:14px; font-weight:bold; color:#424242">合肥市&nbsp;</span></div>
+    	<div class="top_a1">
+        </div>
+    </div>
+    <div class="top_bg">
+    	<div class="top_bga">
+    		<div class="logo"><a href="$!webRoot/part/index"><img src="$!webRoot/resources/images/logo.jpg"></img></a></div>
+    		<div class="lead">
+    			<div class="top_bga_1"></div>
+           		<div class="top_bga_2">
+            	<ul>
+                    <a href="$!webRoot/part/contact-us"><li>联系我们</li></a>
+                    <a href="$!webRoot/part/myInfo"><li>我的信息</li></a>    
+                    <a href="$!webRoot/part/more-job"><li>职位列表</li></a>
+                    <a href="index.html"><li><i class="fa "></i>&nbsp;主页</li></a>
+                </ul>
+            </div>
+    		</div>
+        	
+        </div>
+    </div>
+</div>
+<!-- top内容结束 -->
+
+<div class="center_blank"></div>
+<!-- 内容开始 -->
+<div class="nr">
+		<div class="input-group search-div">
+		  <input type="hidden" name="entity.categoryId" value="$!categoryId">
+          <input type="text" class="form-control" placeholder="输入职位名称" name="jabName" id="search-input"> <span class="input-group-btn">
+              <button type="button" class="btn btn-primary search-btn">搜索 </button> </span>
+		</div>
+          <div class="bft_f">
+          	<div class="bft_f_1">
+            	<ul>
+                	<li>区域</li>
+                    <li>内容</li>
+                    <li>报 酬</li>
+                    <li>技能要求</li>
+                    <li></li>
+                </ul>
+            </div>
+            <div class="job-list">
+            <div class="bft_f_2">
+            	<ul>
+                </ul>
+            </div>
+            </div>
+            <div class="bft_f_3 page-limit">
+            	<ul>
+                	<li>第<span id="page-num">1</span>页</li>
+                    <li><a href="javascript:;" id="first-page">首页</a></li>
+                    <li><a href="javascript:;" id="last-page">上一页</a> </li>
+                    <li><a href="javascript:;" id="next-page">下一页</a> </li>
+                    <li><a href="javascript:;" id="end-page">尾页</a></li>
+                    <li>共<span id="total-page">5</span>页</li>
+                </ul>
+            </div>
+          </div>
+
+<!-- alpha div -->
+<div id="maskLayer" style="display:none;">
+<iframe id="maskLayer_iframe" frameBorder=0 scrolling=no style="filter:alpha(opacity=50)"></iframe>
+<div id="alphadiv" style="filter:alpha(opacity=50);-moz-opacity:0.5;opacity:0.5"></div>
+	<div id="drag">
+		<h3 id="drag_h"></h3>
+		<div id="drag_con"></div><!-- drag_con end -->
+	</div>
+</div><!-- maskLayer end -->
+</div>
+<!-- alpha div end -->
+
+</body>
+<script type="text/javascript" src="$!webRoot/resources/js/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="$!webRoot/resources/js/plugins/bootstrap/bootstrap.min.js"></script>
+<script type="text/javascript" src="$!webRoot/resources/js/search/area.js"></script>
+<script type="text/javascript" src="$!webRoot/resources/js/search/location.js"></script>
+<script type="text/javascript" src="$!webRoot/resources/js/search/select2.js"></script>
+<script type="text/javascript" src="$!webRoot/resources/js/search/select2_locale_zh-CN.js"></script>
+<script type="text/javascript" src="$!webRoot/resources/js/jquery.touchSlider.js"></script>
+<script type="text/javascript" src="$!webRoot/resources/js/js.js"></script>
+<script type="text/javascript" src="$!webRoot/resources/js/ks-switch.pack.js"></script>
+<script type="text/javascript" src="$!webRoot/resources/js/plugins/iCheck/icheck.min.js"></script>
+<script type="text/javascript" src="$!webRoot/resources/js/plugins/sweetalert/sweetalert.min.js"></script>
+<script>
+	//初始化分页参数
+	var pageNum = 1;
+	var pageSize = 10;
+	var totalPage;
+	var firstInit = true;
+	//初始化
+	$(function(){
+		if (firstInit) {
+			initJob();
+		}
+		firstInit = false;
+	})
+	
+	//首页
+	$("#first-page").click(function(){
+		pageNum = 1;
+		initJob();
+	});
+	
+	//下一页
+	$("#next-page").click(function(){
+		if (pageNum >= totalPage) {
+			pageNum = totalPage;
+			initJob();
+		} else {
+			pageNum ++;
+		}
+		initJob();
+		
+	});
+	
+	//上一页
+	$("#last-page").click(function(){
+		if (pageNum <= 1) {
+			pageNum = 1;
+		} else {
+			pageNum --;
+		}
+		initJob();
+	})
+	
+	//末页
+	$("\#end-page").click(function(){
+		pageNum = totalPage;
+		initJob();
+	})
+	
+	//搜索
+	$(".search-btn").click(function(){
+		initJob();
+	})
+		
+	
+	function initJob(){
+		var title = $("input[name='jabName']").val();
+		var url = "$!webRoot/part/list-job";
+		var categoryId = $("input[name='entity.categoryId']").val();
+		var args = {'pageNum':pageNum,'pageSize':pageSize,'title':title,'categoryId':categoryId}
+		$.post(url, args, function(ret,stats) {
+			if (stats == "success") {
+				if (ret.code === 200) {
+					var html = "";
+					var pager = ret.data;
+					var jobs = ret.data.data;
+					var mastSalaryHtml = "";
+					for (var i in jobs) {
+						html += '<div class="bft_f_2"><ul><li><span>' 
+							+jobs[i].adress + '</span></li><li class="job-title"><a href="$!webRoot/part/job-detail?id=' + jobs[i].id + '">' +jobs[i].title + '</a></li>';
+							
+						if (jobs[i].mastSalary) {
+							mastSalaryHtml = "-" + jobs[i].mastSalary;
+						}
+						//薪水类型为小时	
+						if (jobs[i].salaryType == 1) {  
+							html += '<li>' + jobs[i].lessSalary + mastSalaryHtml + '元/小时</li><li>';
+						} else if (jobs[i].salaryType == 2) { //薪水类型为天
+							html += '<li>' + jobs[i].lessSalary + mastSalaryHtml + '元/天</li><li>';
+						} else if (jobs[i].salaryType == 3) {
+							html += '<li>' + jobs[i].lessSalary + mastSalaryHtml + '元/月</li><li>';
+						} else if (jobs[i].salaryType == 4) {
+							html += '<li>' + jobs[i].lessSalary + mastSalaryHtml + '元/年</li><li>';
+						}
+							
+							html += jobs[i].requestLimit + '</li><li><button type="button" data-id="'
+							+jobs[i].id+'" class="btn btn-outline btn-primary apply-btn"><i class="fa "></i>申请</button></li></ul></div>'
+					}
+					totalPage = pager.totalPage;
+					$(".job-list").html(html);
+					$("#total-page").text(totalPage);
+					$("#page-num").text(pageNum);
+					$("input[name='entity.categoryId']").val("");
+				}
+			}
+		})
+	}
+	
+	
+	//申请职位
+	$(document).on("click", ".apply-btn", function(){
+		
+		var jobId = $(this).data("id");
+		var userId = "$!user.id";
+		if (!userId) {
+			swal("请先登录！");
+			return false;
+		} 
+		swal({
+			title : "确认申请？",
+			text : "确认申请",
+			showCancelButton : true,
+			confirmButtonColor : "#1ab394",
+			confirmButtonText : "确认",
+			cancelButtonText : "取消",
+			closeOnConfirm : false,	
+		},function(isConfirm) {
+			if (isConfirm) {
+				
+				$.post("$!webRoot/part/apply-job",{'userId':userId,'jobId':jobId},function(ret, stats){
+					if (stats == "success") {
+		                if (ret.code === 200) {
+		                	swal("申请成功", "申请成功", "success");
+		                } else {
+		                    swal("申请失败！", ret.error, "error");
+		                }
+					}
+				});
+			}
+		});
+		
+	});
+
+	$('#search-input').focus();
+	$('#search-input').click();
+
+</script>
+
+
+</html>

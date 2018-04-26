@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>后台管理中心</title>  
+    <link rel="stylesheet" href="$!webRoot/resources/css/layui.css">
+    <link href="$webRoot/resources/css/plugins/sweetalert/sweetalert.css" rel="stylesheet">
+    
+    <script src="$!webRoot/resources/js/jquery.js"></script>
+    <script type="text/javascript" src="$!webRoot/resources/js/plugins/sweetalert/sweetalert.min.js"></script>
+    
+	
+</head>
+<style>
+#left-side{
+	margin-top: 60px;
+}
+.iframe{
+	width:100%;
+	height: 100%;
+}
+</style>
+
+<body class="layui-layout-body">
+<div class="layui-layout layui-layout-admin">
+  <div class="layui-header">
+    <div class="layui-logo">后台管理中心</div>
+    
+    <ul class="layui-nav layui-layout-right">
+      <li class="layui-nav-item">
+        <a href="javascript:;">
+          <img src="$!user.icon" class="layui-nav-img">
+          $!user.nickName
+        </a>
+        <dl class="layui-nav-child">
+          <dd><a href="$!webRoot/admin/userInfo" target="iframe">基本资料</a></dd>
+          <dd><a href="">修改密码</a></dd>
+        </dl>
+      </li>
+      <li class="layui-nav-item"><a href="javascript:;" id="logout">退了</a></li>
+    </ul>
+  </div>
+  
+  <div class="layui-side layui-bg-black">
+    <div class="layui-side-scroll">
+      <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+      <ul class="layui-nav layui-nav-tree"  lay-filter="test">
+        <li class="layui-nav-item layui-nav-itemed">
+          <a class="" href="javascript:;">职位管理</a>
+          <dl class="layui-nav-child">
+          	#if($!user.type == 2)
+          		<dd><a href="$!webRoot/admin/job-list" target="iframe">职位列表</a></dd>
+          	#end
+            <dd><a href="$!webRoot/admin/publish-job" target="iframe">发布职位</a></dd>
+            <dd><a href="$!webRoot/admin/my-publish" target="iframe">我发布的</a></dd>
+          </dl>
+        </li>
+        #if ($!user.type == 2)
+        <li class="layui-nav-item">
+          <a href="javascript:;">新闻管理</a>
+          <dl class="layui-nav-child">
+            <dd><a href="$!webRoot/admin/news-listView" target="iframe">新闻列表</a></dd>
+            <dd><a href="$!webRoot/admin/add-newsView" target="iframe">发布新闻</a></dd>
+          </dl>
+        </li>
+        <li class="layui-nav-item"><a href="$!webRoot/admin/user-listView" target="iframe">用户列表</a></li>
+        <li class="layui-nav-item"><a href="$!webRoot/admin/contact-view" target="iframe">用户反馈</a></li>
+        <li class="layui-nav-item">
+          <a href="javascript:;">类目管理</a>
+          <dl class="layui-nav-child">
+            <dd><a href="$!webRoot/admin/category-view" target="iframe">类目列表</a></dd>
+            <dd><a href="$!webRoot/admin/add-first-categoryView" target="iframe">添加一级类目</a></dd>
+            <dd><a href="$!webRoot/admin/add-categoryView" target="iframe">新增类目</a></dd>
+          </dl>
+        </li>
+        #end
+      </ul>
+    </div>
+  </div>
+  
+  <div class="layui-body">
+    <!-- 内容主体区域 -->
+    <iframe src="$!webRoot/admin/job-list" target="_self" frameborder="0" class="iframe" name="iframe"></iframe>
+  </div>
+  
+  <div class="layui-footer">
+    <!-- 底部固定区域 -->
+    © 易找    2018.4
+  </div>
+</div>
+<script>
+$("#logout").click(function(){
+	$.post("$!webRoot/account/ad-logout",null,function(ret, stats){
+		if (stats == "success") {
+            if (ret.code === 200) {
+            	swal("退出成功", "退出成功", "success");
+            	window.location.href = "$!webRoot/admin/login";
+            } else {
+                swal("退出失败！", ret.error, "error");
+            }
+		}
+	});
+});
+</script>
+
+<script src="$!webRoot/resources/js/layui.all.js"></script>
+</body>
+</html>

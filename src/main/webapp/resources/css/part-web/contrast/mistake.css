@@ -1,0 +1,49 @@
+
+body{
+    background-color: #fff
+}
+
+.list-body{
+    width: 95%;
+    margin:0 auto;
+}
+
+/*.form-body{*/
+    /*margin-top: 20px;*/
+    /*margin-bottom: 20px;*/
+/*}*/
+
+/*.form-inline .form-group{*/
+    /*margin-right: 20px;*/
+/*}*/
+
+.form-group .btn{
+    margin-left: 20px;
+}
+
+.f-r{
+    float: right;
+}
+.sysimg{
+    width:120px;
+    height:55px;
+    cursor:pointer;
+}
+.sysimg:hover{
+    transform:scale(2.0);/* 2.0ָ���ǷŴ�ı��� */
+}
+.dataTables_paginate paging_simple_numbers{
+	float:right;
+}
+table{
+	width:80%;
+}
+/*th{*/
+	/*height:30px;*/
+	/*font-size:15px;*/
+	/*text-align:center;*/
+/*}*/
+/*td{*/
+	/*height:25px;*/
+	/*text-align:center;*/
+/*}*/

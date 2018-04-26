@@ -1,0 +1,277 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>易找网 — 首页</title>
+<link href="$!webRoot/resources/css/select2.css" rel="stylesheet"/>
+<link rel="stylesheet" href="$!webRoot/resources/css/style.css" />
+<link href="$webRoot/resources/css/plugins/bootstrap/bootstrap.min.css" rel="stylesheet">
+<link href="$webRoot/resources/css/plugins/style/style.min.css" rel="stylesheet">
+<link href="$webRoot/resources/css/plugins/font-awesome/font-awesome.min.css" rel="stylesheet">
+<link href="$webRoot/resources/css/plugins/bootstrap-table/bootstrap-table.css" rel="stylesheet">
+<link href="$webRoot/resources/css/plugins/toastr/toastr.min.css" rel="stylesheet">
+<link href="$webRoot/resources/css/plugins/sweetalert/sweetalert.css" rel="stylesheet">
+<link href="$webRoot/resources/css/plugins/bootstrapvalidator/bootstrapValidator.css" rel="stylesheet">
+<link href="$webRoot/resources/css/plugins/iCheck/custom.css" rel="stylesheet">
+<link href="$webRoot/resources/css/plugins/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css" rel="stylesheet">
+<link href="$webRoot/resources/css/plugins/poshytip/tip-yellowsimple/tip-yellowsimple.css" rel="stylesheet">
+
+</head>
+
+<style>
+.logo {
+	float: left;
+	width : 20%;
+	height : 108px;
+	z-index: -1;
+}
+.logo img{
+	/*width: 100%;*/
+	height: 100%;
+}
+.lead{ 
+	float: right;
+	width: 80%;
+}
+.lead li{
+	background-color: #333333;
+
+}
+.regist-icon {
+	font-size: 128px;
+}
+.regist-icon a :HOVER {
+	background-color: #ffffff;
+	color: #6cb0d8;
+}
+#user-type {
+	float : right;
+	margin-top: -15px;
+	margin-right: 15px;
+}
+#user-name {
+	margin-top: 10px;
+	text-align: center;
+}
+.userInfo {
+	padding-bottom: 50px;
+}
+.logoff-div {
+	float: right;
+	margin-right: -230px;
+	margin-top: -140px;
+}
+</style>
+
+<body class="bs_bg">
+<!-- top内容开始 -->
+<div class="top">
+	<div class="top_a">
+    	<div class="top_a3"><span style="color: red;">$!user.nickName</span>您好，欢迎来到易找兼职网！ <span style="font-size:14px; font-weight:bold; color:#424242">合肥市&nbsp;</span></div>
+    	<div class="top_a1">
+        </div>
+    </div>
+    <div class="top_bg">
+    	<div class="top_bga">
+    		<div class="logo"><a href="$!webRoot/part/index"><img src="$!webRoot/resources/images/logo.jpg"></img></a></div>
+    		<div class="lead">
+    			<div class="top_bga_1"></div>
+           		<div class="top_bga_2">
+            	<ul>
+                    <a href="$!webRoot/part/contact-us"><li>联系我们</li></a>
+                    <a href="$!webRoot/part/myInfo"><li>我的信息</li></a>    
+                    <a href="$!webRoot/part/more-job"><li>职位列表</li></a>
+                    <a href="index.html"><li><i class="fa "></i>&nbsp;主页</li></a>
+                </ul>
+            </div>
+    		</div>
+        	
+        </div>
+    </div>
+</div>
+<!-- top内容结束 -->
+<div class="center_blank"></div>
+<!-- 内容开始 -->
+<div class="nr">  
+			<div class="zzy_nr">
+				<div class="zzy">$!job.title</div>
+                <div class="zzy_1">
+                	<ul>
+                    	<li><span>☆</span>&nbsp;$!date.format('yyyy-MM-dd ',$!job.gmtCreated)更新</li>
+                        <li><span>¤</span>&nbsp;$!viewCount 人浏览</li>
+                        <li><span>♥</span>&nbsp;$!resumeCount 人投递简历</li>
+                    </ul>
+                </div>
+                <div class="zzy_2">
+<table width="600" border="1" cellspacing="1" cellpadding="1">
+  <tr>
+    <td>职位名称：<span>$!job.title</span></td>
+    <td>月薪：<span>$!job.lessSalary 元-$!job.mastSalary元</span></td>
+  </tr>
+  <tr>
+    <td>招聘人数：$!job.needPeople人</td>
+    <td>最低学历：$!job.lessEducation</td>
+  </tr>
+  <tr>
+    <td>工作经验：
+    #if($!job.lessExperience == $!job.mastExperience && $!job.mastExperience == "不限")
+   		 不限
+    #else
+    	$!job.lessExperience - $!job.mastExperience 年
+    #end
+    </td>
+    <td>年龄：
+    #if($!job.lessAge == $!job.mastAge && $!job.mastAge == "不限")
+   		 不限
+    #else
+    	$!job.lessAge - $!job.mastAge岁
+    #end
+    </td>
+  </tr>
+  <tr>
+    <td>工作地点：$!job.adress</td>
+  </tr>
+  <tr>
+    <td>联系电话：<i>$!job.telphone</i></td>
+  </tr>
+  <tr>
+    <td>联系人：$!job.connectUser</td>
+  </tr>
+</table>
+                </div>
+                <div class="zzy_4">
+                	<ul>
+                		<a href="javascript:;" id="apply-job" data-job-id="$!job.id" data-user-id="$!user.id"><li>申请职位</li></a>
+                		
+                    </ul>
+                </div>
+                <div class="zzy_5">
+                	<p style="width:680px; height:40px; line-height:40px; background:#f7f7f7; color:#333; font-weight:bold; text-indent:10px; border:1px solid #ddd; margin-bottom:30px; "><span>公司介绍</span></p>
+                    <p>$!job.companyDetail</p>
+                </div>
+			</div>
+            <div class="zzy_nra">
+            	<div class="zzy_6">找类似</div>
+                <div class="zzy_7">
+                	<ul>
+                        <li>
+                        	<a href="zzy.html">
+                            <p><span>市场部专员</span></p>
+                            <p>价格：3000-5000元</p>
+                            </a>
+                        </li>
+                        <li>
+                        	<a href="zzy.html">
+                            <p><span>市场部专员</span></p>
+                            <p>价格：3000-5000元</p>
+                            </a>
+                        </li>
+                        <li>
+                        	<a href="zzy.html">
+                            <p><span>市场部专员</span></p>
+                            <p>价格：3000-5000元</p>
+                            </a>
+                        </li>
+                        <li>
+                        	<a href="zzy.html">
+                            <p><span>市场部专员</span></p>
+                            <p>价格：3000-5000元</p>
+                            </a>
+                        </li>
+                        <li>
+                        	<a href="zzy.html">
+                            <p><span>市场部专员</span></p>
+                            <p>价格：3000-5000元</p>
+                            </a>
+                        </li>
+                        <li>
+                        	<a href="zzy.html">
+                            <p><span>市场部专员</span></p>
+                            <p>价格：3000-5000元</p>
+                            </a>
+                        </li>
+                        <li>
+                        	<a href="zzy.html">
+                            <p><span>市场部专员</span></p>
+                            <p>价格：3000-5000元</p>
+                            </a>
+                        </li>
+                        <li>
+                        	<a href="zzy.html">
+                            <p><span>市场部专员</span></p>
+                            <p>价格：3000-5000元</p>
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+<!-- 内容结束 -->
+    
+</div>
+<!-- 内容结束 -->
+
+<!-- alpha div -->
+<div id="maskLayer" style="display:none;">
+<iframe id="maskLayer_iframe" frameBorder=0 scrolling=no style="filter:alpha(opacity=50)"></iframe>
+<div id="alphadiv" style="filter:alpha(opacity=50);-moz-opacity:0.5;opacity:0.5"></div>
+	<div id="drag">
+		<h3 id="drag_h"></h3>
+		<div id="drag_con"></div><!-- drag_con end -->
+	</div>
+</div><!-- maskLayer end -->
+</div>
+<!-- alpha div end -->
+
+</body>
+<script type="text/javascript" src="$!webRoot/resources/js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="$!webRoot/resources/js/search/area.js"></script>
+<script type="text/javascript" src="$!webRoot/resources/js/search/location.js"></script>
+<script type="text/javascript" src="$!webRoot/resources/js/search/select2.js"></script>
+<script type="text/javascript" src="$!webRoot/resources/js/search/select2_locale_zh-CN.js"></script>
+<script type="text/javascript" src="$!webRoot/resources/js/jquery.touchSlider.js"></script>
+<script type="text/javascript" src="$!webRoot/resources/js/js.js"></script>
+<script type="text/javascript" src="$!webRoot/resources/js/ks-switch.pack.js"></script>
+<script type="text/javascript" src="$!webRoot/resources/js/plugins/sweetalert/sweetalert.min.js"></script>
+<script>
+    //初始化
+    $(function(){
+	    //记录浏览次数
+	    $.post("$!webRoot/part/addViewCount",{'jobId':$!job.id},function(){})
+    })
+    
+    //申请职位
+    $("#apply-job").click(function(){
+    	var jobId = $(this).data("job-id");
+    	var userId = $(this).data("user-id");
+    	if (!userId) {
+			swal("请先登录！");
+			return false;
+		} 
+		swal({
+			title : "确认申请？",
+			text : "确认申请",
+			showCancelButton : true,
+			confirmButtonColor : "#1ab394",
+			confirmButtonText : "确认",
+			cancelButtonText : "取消",
+			closeOnConfirm : false,	
+		},function(isConfirm) {
+			if (isConfirm) {
+				
+				$.post("$!webRoot/part/apply-job",{'userId':userId,'jobId':jobId},function(ret, stats){
+					if (stats == "success") {
+		                if (ret.code === 200) {
+		                	swal("申请成功", "申请成功", "success");
+		                } else {
+		                    swal("申请失败！", ret.error, "error");
+		                }
+					}
+				});
+			}
+		});
+    });
+</script>
+
+
+</html>

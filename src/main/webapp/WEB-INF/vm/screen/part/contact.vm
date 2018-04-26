@@ -1,0 +1,173 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>易找网 — 首页</title>
+<link href="$!webRoot/resources/css/select2.css" rel="stylesheet"/>
+<link rel="stylesheet" href="$!webRoot/resources/css/style.css" />
+<link href="$webRoot/resources/css/plugins/bootstrap/bootstrap.min.css" rel="stylesheet">
+<link href="$webRoot/resources/css/plugins/style/style.min.css" rel="stylesheet">
+<link href="$webRoot/resources/css/plugins/font-awesome/font-awesome.min.css" rel="stylesheet">
+<link href="$webRoot/resources/css/plugins/bootstrap-table/bootstrap-table.css" rel="stylesheet">
+<link href="$webRoot/resources/css/plugins/toastr/toastr.min.css" rel="stylesheet">
+<link href="$webRoot/resources/css/plugins/sweetalert/sweetalert.css" rel="stylesheet">
+<link href="$webRoot/resources/css/plugins/bootstrapvalidator/bootstrapValidator.css" rel="stylesheet">
+<link href="$webRoot/resources/css/plugins/iCheck/custom.css" rel="stylesheet">
+<link href="$webRoot/resources/css/plugins/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css" rel="stylesheet">
+<link href="$webRoot/resources/css/plugins/poshytip/tip-yellowsimple/tip-yellowsimple.css" rel="stylesheet">
+
+</head>
+
+<style>
+.logo {
+	float: left;
+	width : 20%;
+	height : 108px;
+	z-index: -1;
+}
+.logo img{
+	/*width: 100%;*/
+	height: 100%;
+}
+.lead{ 
+	float: right;
+	width: 80%;
+}
+.lead li{
+	background-color: #333333;
+
+}
+.regist-icon {
+	font-size: 128px;
+}
+.regist-icon a :HOVER {
+	background-color: #ffffff;
+	color: #6cb0d8;
+}
+#user-type {
+	float : right;
+	margin-top: -15px;
+	margin-right: 15px;
+}
+#user-name {
+	margin-top: 10px;
+	text-align: center;
+}
+.userInfo {
+	padding-bottom: 50px;
+}
+.logoff-div {
+	float: right;
+	margin-right: -230px;
+	margin-top: -140px;
+}
+.contact-c{
+	margin-left: 300px;
+}
+</style>
+
+<body class="bs_bg">
+<!-- top内容开始 -->
+<div class="top">
+	<div class="top_a">
+    	<div class="top_a3"><span style="color: red;">$!user.nickName</span>您好，欢迎来到易找兼职网！ <span style="font-size:14px; font-weight:bold; color:#424242">合肥市&nbsp;</span></div>
+    	<div class="top_a1">
+        </div>
+    </div>
+    <div class="top_bg">
+    	<div class="top_bga">
+    		<div class="logo"><a href="$!webRoot/part/index"><img src="$!webRoot/resources/images/logo.jpg"></img></a></div>
+    		<div class="lead">
+    			<div class="top_bga_1"></div>
+           		<div class="top_bga_2">
+            	<ul>
+                    <a href="$!webRoot/part/contact-us"><li>联系我们</li></a>
+                    <a href="$!webRoot/part/myInfo"><li>我的信息</li></a>    
+                    <a href="$!webRoot/part/more-job"><li>职位列表</li></a>
+                    <a href="index.html"><li><i class="fa "></i>&nbsp;主页</li></a>
+                </ul>
+            </div>
+    		</div>
+        	
+        </div>
+    </div>
+</div>
+<!-- top内容结束 -->
+<!-- top内容结束 -->
+<div class="center_blank"></div>
+<!-- 公告和介绍开始  --><!-- 公告和介绍结束  -->
+<!-- 内容开始 -->
+<div class="nr">
+	
+    
+    <div class="bzz ">
+                <div class="bzz_c contact-c">
+                	<br />
+                	<p>客服中心</p>
+                    <a href="#"><i class="fa ">QQ: 88888888</i></a>&nbsp;&nbsp;&nbsp;
+                    <a href="#"><i class="fa ">微信: yizu8888</i></a>&nbsp;&nbsp;&nbsp;
+                    <a href="#"><i class="fa ">微博: yizu8888</i></a>
+                </div>
+                <div class="bzz_d contact-c" >
+                	<p><span>网站建议</span></p>
+                   
+                    <p class="item">
+                    	<div class="bzz_e">内容：</div>
+						<textarea style="width:360px; height:100px; border:1px solid #c9c9c9; color:#666; padding:5px;" id="remark"></textarea>
+                    </p>　
+                    <button type="button" class="btn btn-w-m btn-primary commit-c">提交</button>
+                </div>
+       </div>
+</div>
+<!-- 内容结束 -->
+
+<!-- alpha div -->
+<div id="maskLayer" style="display:none;">
+<iframe id="maskLayer_iframe" frameBorder=0 scrolling=no style="filter:alpha(opacity=50)"></iframe>
+<div id="alphadiv" style="filter:alpha(opacity=50);-moz-opacity:0.5;opacity:0.5"></div>
+	<div id="drag">
+		<h3 id="drag_h"></h3>
+		<div id="drag_con"></div><!-- drag_con end -->
+	</div>
+</div><!-- maskLayer end -->
+</div>
+<!-- alpha div end -->
+
+</body>
+<script type="text/javascript" src="$!webRoot/resources/js/jquery-2.1.1.min.js"></script>
+<script src="$webRoot/resources/js/plugins/bootstrap/bootstrap.min.js"></script>
+<script type="text/javascript" src="$!webRoot/resources/js/demo-web/common/utils/modalUtil.js"></script>
+<script type="text/javascript" src="$!webRoot/resources/js/plugins/sweetalert/sweetalert.min.js"></script>
+<script type="text/javascript" src="$!webRoot/resources/js/demo-web/common/utils/ajaxUtil.js"></script>
+<script type="text/javascript" src="$!webRoot/resources/js/demo-web/common/utils/ajaxUtil.js"></script>
+<script type="text/javascript" src="$!webRoot/resources/js/search/area.js"></script>
+<script type="text/javascript" src="$!webRoot/resources/js/search/location.js"></script>
+<script type="text/javascript" src="$!webRoot/resources/js/search/select2.js"></script>
+<script type="text/javascript" src="$!webRoot/resources/js/search/select2_locale_zh-CN.js"></script>
+<script type="text/javascript" src="$!webRoot/resources/js/jquery.touchSlider.js"></script>
+<script type="text/javascript" src="$!webRoot/resources/js/js.js"></script>
+<script type="text/javascript" src="$!webRoot/resources/js/ks-switch.pack.js"></script>
+<script>
+
+	//查看职位详情
+	$(document).on("click", ".job-list a", function(){
+		var id = $(this).data("id");
+		window.location.href = "$!webRoot/part/job-detail?id=" + id;
+	})
+
+	$(".commit-c").click(function(){
+		var content = $("#remark").val();
+		$.post("$!webRoot/part/contact",{'content':content},function(ret, stats){
+			if (stats == "success") {
+                if (ret.code === 200) {
+                	swal("提交成功", "提交成功", "success");
+                } else {
+                    swal("提交失败！", ret.error, "error");
+                }
+			}
+		});
+	});
+</script>
+
+
+</html>

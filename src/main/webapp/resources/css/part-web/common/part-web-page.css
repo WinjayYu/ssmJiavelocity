@@ -1,0 +1,19 @@
+/* mall-web自定义页面样式 */
+.page-title {
+  padding: 0px;
+  font-size: 20px;
+  letter-spacing: -1px;
+  display: block;
+  color: #666;
+  margin: 20px 0px 15px 0px;
+  font-weight: 300;
+  font-family: 'Open Sans';
+}
+
+.form-topline{
+	margin:5% 0;
+}
+
+.div-top-gap{
+	margin-top:10%;
+}

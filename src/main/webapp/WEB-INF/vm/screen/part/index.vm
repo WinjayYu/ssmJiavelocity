@@ -1,0 +1,489 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>易找网 — 首页</title>
+<link href="$!webRoot/resources/css/select2.css" rel="stylesheet"/>
+<link rel="stylesheet" href="$!webRoot/resources/css/style.css" />
+<link href="$webRoot/resources/css/plugins/bootstrap/bootstrap.min.css" rel="stylesheet">
+<link href="$webRoot/resources/css/plugins/style/style.min.css" rel="stylesheet">
+<link href="$webRoot/resources/css/plugins/font-awesome/font-awesome.min.css" rel="stylesheet">
+<link href="$webRoot/resources/css/plugins/bootstrap-table/bootstrap-table.css" rel="stylesheet">
+<link href="$webRoot/resources/css/plugins/toastr/toastr.min.css" rel="stylesheet">
+<link href="$webRoot/resources/css/plugins/sweetalert/sweetalert.css" rel="stylesheet">
+<link href="$webRoot/resources/css/plugins/bootstrapvalidator/bootstrapValidator.css" rel="stylesheet">
+<link href="$webRoot/resources/css/plugins/iCheck/custom.css" rel="stylesheet">
+<link href="$webRoot/resources/css/plugins/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css" rel="stylesheet">
+<link href="$webRoot/resources/css/plugins/poshytip/tip-yellowsimple/tip-yellowsimple.css" rel="stylesheet">
+
+</head>
+
+<style>
+.logo {
+	float: left;
+	width : 20%;
+	height : 108px;
+	z-index: -1;
+}
+.logo img{
+	height: 100%;
+}
+.lead{ 
+	float: right;
+	width: 80%;
+}
+.lead li{
+	background-color: #333333;
+
+}
+.regist-icon {
+	font-size: 128px;
+}
+.regist-icon a :HOVER {
+	background-color: #ffffff;
+	color: #6cb0d8;
+}
+#user-type {
+	float : right;
+	margin-top: -15px;
+	margin-right: 15px;
+}
+#user-name {
+	margin-top: 10px;
+	text-align: center;
+}
+.userInfo {
+	padding-bottom: 50px;
+}
+.logoff-div {
+	float: right;
+	margin-right: -230px;
+	margin-top: -140px;
+}
+</style>
+
+<body class="bs_bg">
+<!-- top内容开始 -->
+<div class="top">
+	<div class="top_a">
+    	<div class="top_a3"><span style="color: red;">$!user.nickName</span>您好，欢迎来到易找兼职网！ <span style="font-size:14px; font-weight:bold; color:#424242">合肥市&nbsp;</span></div>
+    	<div class="top_a1">
+        </div>
+    </div>
+    <div class="top_bg">
+    	<div class="top_bga">
+    		<div class="logo"><a href="$!webRoot/part/index"><img src="$!webRoot/resources/images/logo.jpg"></img></a></div>
+    		<div class="lead">
+    			<div class="top_bga_1"></div>
+           		<div class="top_bga_2">
+            	<ul>
+                    <a href="$!webRoot/part/contact-us"><li>联系我们</li></a>
+                    <a href="$!webRoot/part/myInfo"><li>我的信息</li></a>    
+                    <a href="$!webRoot/part/more-job"><li>职位列表</li></a>
+                    <a href="index.html"><li><i class="fa"></i>&nbsp;主页</li></a>
+                </ul>
+            </div>
+    		</div>
+        	
+        </div>
+    </div>
+</div>
+<!-- top内容结束 -->
+
+<!-- 招聘信息开始  -->
+<div class="input-group search-div">
+    <input type="hidden" name="entity.categoryId" value="$!categoryId">
+    <input type="text" class="form-control" placeholder="输入职位名称" name="jabName" id="search-input"> <span class="input-group-btn">
+              <button type="button" class="btn btn-primary search-btn">搜索 </button> </span>
+</div>
+<div class="center_a">
+	<div class="center_blank"></div>
+	<div class="center_b">
+    	<div class="center_gg">
+        	<div class="center_gga">
+            	<div class="center_gga_1">招聘信息</div>
+                <div class="more more-job"><a  href="javascript:;">更多>></a></div>
+            </div>
+            <div class="center_ggb job-list">
+            	<ul>
+            		#foreach($!job in $!jobs)
+            			<li><a data-id="$!job.id" href="javascript:;"><span>$!date.format('yyyy-MM-dd HH:mm:ss ',$!job.gmtCreated)</span>$!job.title</a></li>
+            		#end
+                </ul>
+            </div>
+    	</div>
+        
+        <div class="center_js">
+        	<div class="center_gga">新闻</div>
+            <div class="banner">
+            	<!--  banner图片开始 -->
+            	<div class="main_visual">
+                	<div class="flicking_con">
+                		<a href="#" class="">1</a>
+                		<a href="#" class="on">2</a>
+                		<a href="#" class="">3</a>
+                		<a href="#" class="">4</a>	
+                	</div>
+                	<div class="main_image">
+                		<ul style="width: 353px; overflow: visible;">
+                			<a href="zzy.html" style="float: none; display: block; position: absolute; top: 0px; left: -353px; width: 353px;"><li><img style="width:100%;height:100%;" src="$!webRoot/resources/imgs/default2.jpg"></li></a>
+                			<a href="zzy.html" style="float: none; display: block; position: absolute; top: 0px; left: 0px; width: 353px;"><li><img style="width:100%;height:100%;" src="$!webRoot/resources/imgs/default.gif"></li></a>
+                			<a href="zzy.html" style="float: none; display: block; position: absolute; top: 0px; left: -1059px; width: 353px;"><li><span class="img_3"></span></li></a>
+                			<a href="zzy.html" style="float: none; display: block; position: absolute; top: 0px; left: -706px; width: 353px;"><li><span class="img_4"></span></li></a>
+                		</ul>
+                		<a href="javascript;" id="btn_prev" style="width: 353px; overflow: visible;"></a>
+                		<a href="javascript;" id="btn_next" style="width: 353px; overflow: visible;"></a>
+                	</div>
+                </div>
+               <!--  <div class="main_visual">
+                	<div class="flicking_con">
+                		<a href="#">1</a>
+                		<a href="#">2</a>
+                		<a href="#">3</a>
+                		<a href="#">4</a>	
+                	</div>
+                	<div class="main_image">
+                		<ul>
+                			<a href="zzy.html"><li><img style="width:339px;height:226px;" src="$!webRoot/resources/imgs/default2.jpg"></li></a>
+                			<a href="zzy.html"><li><img style="width:339px;height:226px;" src="$!webRoot/resources/imgs/default.gif"></li></a>
+                			<a href="zzy.html"><li><span class="img_3"></span></li></a>
+                			<a href="zzy.html"><li><span class="img_4"></span></li></a>
+                		</ul>
+                		<a href="javascript;" id="btn_prev"></a>
+                		<a href="javascript;" id="btn_next"></a>
+                	</div>
+                </div> -->
+                <!--  banner图片结束 -->
+            </div>
+         </div>
+ 
+    </div>
+</div>
+<!-- 招聘信息结束  -->
+<!-- 内容开始 -->
+<div class="nr">
+	<div class="newPos">
+    	<div class="newPos_a">最新职位</div>
+        <div class="newPos_c new_job">
+        	<ul>
+        		#foreach($!j in $!newJobs)
+        			<a data-id="$!j.id" href="javascript:;"><li><span>$!date.format('MM-dd HH:mm ',$!j.gmtCreated)</span>· $!j.title</li></a>
+        		#end
+            </ul>
+        </div>
+    </div>
+    
+    <div class="bang">
+    	<!-- 标签切换开始 -->
+        <div class="itab">
+        	<dl >
+        	 <div class="slideBox">
+        		<dt style="display: block;" class="login-part">
+        			<span style="width:486px;" class="on">我要登录</span>
+        		</dt>
+        		<dt style="display: none;" class="userInfo-part">
+        			<span style="width:486px" class="on">我的信息</span>
+        		</dt>
+        	</div>
+                <dt style="width:100%; height:2px; float:left"></dt>
+                <div class="ibox float-e-margins login-part" style="display: block">
+                    <div class="ibox-content">
+                        <div class="row">
+                            <div class="col-sm-6 b-r">
+                                <p>欢迎登录本站(⊙o⊙)</p>
+                                <form role="form" id="login-form">
+                                    <div class="form-group">
+                                        <label>用户名</label>
+                                        <input type="text" name="user.userName" placeholder="请输入用户名" class="form-control">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>密码</label>
+                                        <input type="password" name="user.password" placeholder="请输入密码" class="form-control">
+                                    </div>
+                                    <div>
+                                        <button class="btn btn-sm btn-primary pull-right m-t-n-xs login-btn" type="button"><strong>登 录</strong>
+                                        </button>
+##                                        <label>
+##                                            <div class="icheckbox_square-green" style="position: relative;"><input type="checkbox" class="i-checks" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div></label>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="col-sm-6">
+                                <h4>还不是会员？</h4>
+                                <p>您可以注册一个新账户</p>
+##                                <p class="text-center regist-icon">
+##                                    <a href="javascript:;" id="regist-btn"><i class="fa fa-sign-in big-icon"></i></a>
+##                                </p>
+                                <button id="regist-btn" class="btn btn-sm btn-primary pull-right m-t-n-xs" type="button"><strong>注册</strong>
+
+							</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ibox float-e-margins userInfo-part" style="display: none;">
+                            <div class=" b-r icon-info clear">
+                				<div class="alert alert-info userInfo">
+									<div style="width: 200px;">
+                            	<div style="width: 100px;">
+                            		<div>
+                						<img alt="image" id="user-icon" class="img-circle" style="width:100px;height:100px;" src="$!user.icon">
+                						</img>
+                					</div>
+                						<p class="font-bold" id="user-name">$!user.nickName</p>
+                				</div>
+                					<div id="user-type">
+                					<span class="label label-primary" id="user-type">
+                					#if($!user.type == 0)
+                					    普通会员
+                					#else
+                					  招聘方
+                					#end
+                					
+                					</span>
+                					</div>
+                					<div class="logoff-div">
+                					<button class="btn btn-warning btn-xs logoff-btn" type="button"><i class="fa fa-sign-out"></i> <span class="bold">注销</span>
+                        </button>
+                					</div>
+                				</div>
+                    			<h2>$!user.userName</h2>
+                    			<ul class="list-unstyled m-t-md">
+                        			<li>
+                            			<span class="fa m-r-xs"></span>
+                            			<label>Email:</label>
+                            				#if($!user.email)
+                            				    $!user.email
+                            				#else
+                            				    暂无...
+                            				#end
+                        			</li>
+                        			<li>
+                            			<span class="fa m-r-xs"></span>
+                            			<label>WeChat:</label>
+                            				#if($!user.wechat)
+                            				$!user.wechat
+                            				#else
+                            				    暂无...
+                            				#end
+                        			</li>
+                       			 <li>
+                            <span class="fa m-r-xs"></span>
+                            <label>Contact:</label>
+                            (+86) 
+                            				#if($!user.telphone)
+                            				    $!user.telphone
+                            				#else
+                            				    暂无...
+                            				#end
+                        </li>
+                    </ul>
+                </div>
+                	</div>
+             </dl>
+        </div>
+        <!-- 标签切换结束 -->
+    </div>
+    
+    <div class="newPos">
+    	<div class="newPos_a">最新职位</div>
+        <div class="newPos_b">
+            <div class="newPos_b_title"><p>培训类别：职业培训</p><p>培训费用：<span>￥1000元</span></p>  <p>培训时间：11月20日</p></div>
+        </div>
+        
+    </div>
+    
+    <!-- 帮众开始 -->
+    <div class="blank"></div>
+	<div class="bz">
+    	<div class="center_gga" style="float:left">
+        	<div class="center_gga_1">职位类别</div>
+            <div class="center_ggc">
+            #foreach($!first in $!firstCategory)
+            <a href="$!webRoot/part/more-job?categoryId=$!first.id">$!first.name</a>
+            #end
+            </div>
+        </div>
+        
+        #foreach($!cate in $!categorys)
+        <div class="bz_a">
+        	<div class="bz_a_1">$!cate.name</div>
+            <div class="bz_a_2">
+            	<ul>
+            	    #foreach($!ca in $!cate.childs)
+            	    	<li><a href="$!webRoot/part/more-job?categoryId=$!ca.id">$!ca.name</a></li>
+            	    #end
+                </ul>
+            </div>
+        </div>
+        #end
+    </div>
+	<!-- 帮众结束 -->
+    
+</div>
+<!-- 内容结束 -->
+
+<!-- alpha div -->
+<div id="maskLayer" style="display:none;">
+<iframe id="maskLayer_iframe" frameBorder=0 scrolling=no style="filter:alpha(opacity=50)"></iframe>
+<div id="alphadiv" style="filter:alpha(opacity=50);-moz-opacity:0.5;opacity:0.5"></div>
+	<div id="drag">
+		<h3 id="drag_h"></h3>
+		<div id="drag_con"></div><!-- drag_con end -->
+	</div>
+</div><!-- maskLayer end -->
+</div>
+<!-- alpha div end -->
+
+</body>
+<script type="text/javascript" src="$!webRoot/resources/js/jquery-2.1.1.min.js"></script>
+<script src="$webRoot/resources/js/plugins/bootstrap/bootstrap.min.js"></script>
+<script type="text/javascript" src="$!webRoot/resources/js/demo-web/common/utils/modalUtil.js"></script>
+<script type="text/javascript" src="$!webRoot/resources/js/plugins/sweetalert/sweetalert.min.js"></script>
+<script type="text/javascript" src="$!webRoot/resources/js/demo-web/common/utils/ajaxUtil.js"></script>
+<script type="text/javascript" src="$!webRoot/resources/js/demo-web/common/utils/ajaxUtil.js"></script>
+<script type="text/javascript" src="$!webRoot/resources/js/search/area.js"></script>
+<script type="text/javascript" src="$!webRoot/resources/js/search/location.js"></script>
+<script type="text/javascript" src="$!webRoot/resources/js/search/select2.js"></script>
+<script type="text/javascript" src="$!webRoot/resources/js/search/select2_locale_zh-CN.js"></script>
+<script type="text/javascript" src="$!webRoot/resources/js/jquery.touchSlider.js"></script>
+<script type="text/javascript" src="$!webRoot/resources/js/js.js"></script>
+<script type="text/javascript" src="$!webRoot/resources/js/ks-switch.pack.js"></script>
+<script>
+
+    //初始化
+    $(function(){
+    	showUser();
+    })
+	//查看职位详情
+	$(document).on("click", ".job-list a", function(){
+		var id = $(this).data("id");
+		window.location.href = "$!webRoot/part/job-detail?id=" + id;
+	})
+	
+	$(document).on("click", ".new_job a", function(){
+		var id = $(this).data("id");
+		window.location.href = "$!webRoot/part/job-detail?id=" + id;
+	})
+
+	$(document).on("click", ".more-job a", function() {
+		window.location.href = "$!webRoot/part/more-job";
+	})
+	
+	$("#regist-btn").click(function(){
+		loadModal("用户注册","600px","$!webRoot/account/regist",null,function(){
+			$(".save").click(function(){
+				var password = $("input[name='entity.password']").val();
+				var repassword = $("input[name='re-password']").val();
+				if (password != repassword) {
+					swal("注册失败","密码不一致！", "error");
+					return false;
+				}
+				
+				var formData = $("#regist-form").serialize();
+				$.post("$!webRoot/account/do-regist", formData, function(ret, stats) {
+	                if (stats == "success") {
+	                    if (ret.code === 200) {
+	                    	closeModal();
+							swal("注册成功","注册成功","success");
+	                    } else {
+	                        swal("注册失败！", ret.error, "error");
+	                    }
+	                }
+	            });
+			});
+			
+		});
+	})
+	
+	//登录
+	$(".login-btn").click(function(){
+		var url = "$!webRoot/account/login";
+        var formData = $("#login-form").serialize();
+        $.post(url, formData, function(ret, stats) {
+            if (stats == "success") {
+                if (ret.code === 200) {
+                	swal({
+						title : "登录成功",
+						text : "success",
+						showCancelButton : false,
+						confirmButtonColor : "#1ab394",
+						confirmButtonText : "确认",
+					},function(isConfirm) {
+						if (isConfirm) {
+							window.location.reload();
+						}
+					});
+                } else {
+                    swal("登录失败！", ret.error, "error");
+                }
+            }
+        });
+	})
+	
+	//注销
+	$(document).on("click", ".logoff-btn", function(){
+		swal({
+			title : "确认注销？",
+			text : "确认注销",
+			showCancelButton : true,
+			confirmButtonColor : "#1ab394",
+			confirmButtonText : "确认",
+			cancelButtonText : "取消",
+			closeOnConfirm : false,	
+		},function(isConfirm) {
+			if (isConfirm) {
+				$.post("$!webRoot/account/log-off", null, function(ret, stats){
+					if (stats == "success") {
+		                if (ret.code === 200) {
+		                	swal({
+								title : "注销成功",
+								text : "success",
+								showCancelButton : false,
+								confirmButtonColor : "#1ab394",
+								confirmButtonText : "确认",
+							},function(isConfirm) {
+								if (isConfirm) {
+									window.location.reload();
+								}
+							});
+		                } else {
+		                    swal("注销失败！", ret.error, "error");
+		                }
+					}
+				});
+			}
+		});
+	})
+	
+	function showUser() {
+    	var user = $!user + "";
+		if (user) {
+			//已登录显示个人信息
+			$(".login-part").css({'display' : 'none'});
+			$(".userInfo-part").css({'display' : 'block'});
+		} else {
+			//未登录，显示登录框
+			$(".login-part").css({'display' : 'block'});
+			$(".userInfo-part").css({'display' : 'none'});
+		}
+	}
+    
+    function showUserInfo(){
+    	$(".login-part").css({'display' : 'none'});
+		$(".userInfo-part").css({'display' : 'block'});
+    }
+    
+    function showLogin(){
+    	//未登录，显示登录框
+		$(".login-part").css({'display' : 'block'});
+		$(".userInfo-part").css({'display' : 'none'});
+    }
+
+    $('#search-input').click(function (e) {
+        window.location.href = "$!webRoot/part/more-job"
+    })
+</script>
+
+
+</html>

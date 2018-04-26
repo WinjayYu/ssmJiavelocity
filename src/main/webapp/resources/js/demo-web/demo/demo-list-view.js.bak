@@ -1,0 +1,244 @@
+/* topicListView.vm自定义页面js */ 
+$(function(){
+	initTable();
+});
+
+var selecturl = "../demo/listSearch";
+$('.searcherButton').click(function(){
+	initTable();
+});
+
+$('.clearSearchButton').click(function(){
+//   	$('#searcherForm')[0].reset();  
+//   	initTable();
+	var status = $("#status").val();
+	var delFlag = $("#delFlag").val();
+	window.location.href = "../topic/topicListView?status=" + status + "&delFlag=" + delFlag;
+});
+
+	var start = {
+        elem: "#beginTime",
+        format: "YYYY-MM-DD hh:mm:ss",
+        max: "2099-06-16 23:59:59",
+        istime: true,
+        istoday: false,
+        choose: function(a) {
+            end.min = a;
+            end.start = a
+        }
+    };
+    var end = {
+        elem: "#overTime",
+        format: "YYYY-MM-DD hh:mm:ss",
+        max: "2099-06-16 23:59:59",
+        istime: true,
+        istoday: false,
+        choose: function(a) {
+            start.max = a
+        }
+    };
+    laydate(start);
+    laydate(end);
+    
+function initTable(){
+	$("#table").bootstrapTable('destroy');
+    $("#table").bootstrapTable({
+    	url: selecturl,
+    	dataType: "json",
+        method: "post",
+        contentType: "application/x-www-form-urlencoded",
+        cache: false,
+        pagination:true,
+        pageSize:50,
+        pageList:[50,100,200],
+        sidePagination:'server',
+        queryParams: function queryParams(params) {
+            return $("#searcherForm").serialize() + "&pager.pageSize=" + params.limit + "&pager.pageNum=" + (params.offset/params.limit + 1);
+        }
+    });
+}
+
+/**
+ * 操作列：编辑（可扩展）
+ */
+function settingFormatter(value, row, index) {
+	var status = $("#status").val();
+	var delFlag = $("#delFlag").val();
+	var rowStatus = row.status;
+	var rowDel = row.delFlag;
+	var btn="";
+	var goup = '<a class="goup btn btn-info btn-xs" href="javascript:void(0)" title="上线"><i class="fa fa-smile-o"></i>&nbsp;上线</a> ';
+	var godown = '<a class="godown btn btn-warning btn-xs" href="javascript:void(0)" title="下线"><i class="fa fa-frown-o"></i>&nbsp;下线</a> ';
+	var edit = '<a class="edit btn btn-primary btn-xs" href="javascript:void(0)" title="编辑"><i class="fa fa-edit"></i>&nbsp;编辑</a> ';
+	var view = '<a class="view btn btn-success btn-xs" href="javascript:void(0)" title="预览"><i class="fa fa-eye"></i>&nbsp;预览</a> ';
+	var del = '<a class="del btn btn-danger btn-xs" href="javascript:void(0)" title="删除"><i class="fa fa-times-circle"></i>&nbsp;删除</a> ';
+	var recovery = '<a class="recovery btn btn-primary btn-xs" href="javascript:void(0)" title="恢复到草稿箱"><i class="fa fa-reply"></i>&nbsp;恢复到草稿箱</a> ';
+	if(status == "" && delFlag == "0"){
+		if((rowStatus == "10" || rowStatus == "20" || rowStatus == "40") && rowDel == "0"){
+			btn = goup + edit + view + del;
+		}
+		if(rowStatus == "30" && rowDel == "0"){
+			btn = godown + edit + view + del; 
+		}
+		if(rowDel == "20"){
+			btn = recovery;
+		}
+	}
+	if(status == "30" && delFlag == "0"){
+		btn = godown + edit + view + del;
+	}
+	if((status == "10" || status == "20" || status == "40") && delFlag == "0"){
+		btn = goup + edit + view + del;
+	}
+	if(status == "" && delFlag == "1"){
+		btn = recovery;
+	}
+	return ['<div class="pull-left">',btn,'</div>'].join('');
+}
+
+/**
+ * bootstrap table 按钮事件
+ */
+window.operateEvents = {
+		'click .godown': function (e, value, row, index) {
+			swal({ title: "您确定将该专题<span style='color:red;'>下线</span>吗？",
+				text:"<span style='color:#1E90FF;'>"+row.name+"</span>",
+                type: "warning",
+                html: true,
+                showCancelButton: true,
+                confirmButtonColor: "#DD6B55",
+                confirmButtonText: "确认 ",
+                cancelButtonText: "取消",
+                closeOnConfirm: true,
+                closeOnCancel: false
+            },
+            function(isConfirm) {
+                if (isConfirm) {
+                	ajaxForm("../topic/godown","POST",{id:row.id},function (ret, stats) {
+                        if (stats == "success") {
+                            if(ret.code === 200) {
+                                initTable();
+                            }else{
+                            	showToastr(ret.error);
+                            }
+                        }
+                    });
+                }else {
+                    swal("已取消！", "您取消了操作！", "error");
+	            }
+		    });
+		},
+		'click .goup': function (e, value, row, index) {
+			swal({ title: "您确定将该专题<span style='color:red;'>上线</span>吗？",
+				text:"<span style='color:#1E90FF;'>"+row.name+"</span>",
+                type: "warning",
+                html: true,
+                showCancelButton: true,
+                confirmButtonColor: "#DD6B55",
+                confirmButtonText: "确认 ",
+                cancelButtonText: "取消",
+                closeOnConfirm: true,
+                closeOnCancel: false
+            },
+            function(isConfirm) {
+                if (isConfirm) {
+                	ajaxForm("../topic/goup","POST",{id:row.id},function (ret, stats) {
+                        if (stats == "success") {
+                            if(ret.code == 200) {
+                                initTable();
+                            }else{
+                            	showToastr(ret.error);
+                            }
+                        }
+                    });
+                }else {
+                    swal("已取消！", "您取消了操作！", "error");
+	            }
+		    });
+		},
+		'click .edit': function (e, value, row, index) {
+			window.location.href = "../topic/topicAddView?id="+row.id;
+		},
+		'click .view': function (e, value, row, index) {
+			loadModal("二维码",null,"../topic/getQrcode?id="+row.id);
+		},
+	    'click .del': function (e, value, row, index) {
+	    	swal({ title: "您确定将该专题<span style='color:red;'>放入回收站</span>吗？",
+	    		text:"<span style='color:#1E90FF;'>"+row.name+"</span>",
+                type: "warning",
+                html: true,
+                showCancelButton: true,
+                confirmButtonColor: "#DD6B55",
+                confirmButtonText: "确认 ",
+                cancelButtonText: "取消",
+                closeOnConfirm: true,
+                closeOnCancel: false
+            },
+            function(isConfirm) {
+                if (isConfirm) {
+                	ajaxForm("../topic/delete","POST",{id:row.id},function (ret, stats) {
+                        if (stats == "success") {
+                            if(ret.code === 200) {
+                                initTable();
+                            }else{
+                            	showToastr(ret.error);
+                            }
+                        }
+                    });
+                }else {
+                    swal("已取消！", "您取消了操作！", "error");
+	            }
+		    });
+	    },
+	    'click .recovery': function (e, value, row, index) {
+	    	swal({ title: "确定将专题<span style='color:red;'>恢复到草稿箱</span>吗？",
+	    		text:"<span style='color:#1E90FF;'>"+row.name+"</span>",
+                type: "warning",
+                html: true,
+                showCancelButton: true,
+                confirmButtonColor: "#DD6B55",
+                confirmButtonText: "确认 ",
+                cancelButtonText: "取消",
+                closeOnConfirm: true,
+                closeOnCancel: false
+            },
+            function(isConfirm) {
+                if (isConfirm) {
+                	ajaxForm("../topic/recovery","POST",{id:row.id},function (ret, stats) {
+                        if (stats == "success") {
+                            if(ret.code === 200) {
+                                initTable();
+                            }else{
+                            	showToastr(ret.error);
+                            }
+                        }
+                    });
+                }else {
+                    swal("已取消！", "您取消了操作！", "error");
+	            }
+		    });
+		},
+}
+
+function settingImgUrl(value, row, index) {
+	var img = '<img src="'+row.imgurl+'" class="sysimg"/>';
+	return ['<div class="pull-left">',img,'</div>'].join('');
+}
+//更新status、delFlag
+function changeTab(status, delFlag){
+	$('#searcherForm')[0].reset();  
+	$("#status").val(status);
+	$("#delFlag").val(delFlag);
+   	initTable();
+}
+
+//消息提示框
+function showToastr(content) {
+    var toast = {};
+    toast.showToastr = 'Y';
+    toast.toastrType = 'error';
+    toast.toastrTitle = '';
+    toast.toastrContent = content;
+    showToast(toast);
+}
+

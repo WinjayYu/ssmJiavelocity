@@ -1,0 +1,414 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>易找网 — 首页</title>
+<link href="$!webRoot/resources/css/select2.css" rel="stylesheet" />
+<link rel="stylesheet" href="$!webRoot/resources/css/style.css" />
+<link href="$webRoot/resources/css/plugins/bootstrap/bootstrap.min.css"
+	rel="stylesheet">
+	<link href="$webRoot/resources/css/plugins/style/style.min.css"
+		rel="stylesheet">
+		<link
+			href="$webRoot/resources/css/plugins/font-awesome/font-awesome.min.css"
+			rel="stylesheet">
+			<link
+				href="$webRoot/resources/css/plugins/bootstrap-table/bootstrap-table.css"
+				rel="stylesheet">
+				<link href="$webRoot/resources/css/plugins/toastr/toastr.min.css"
+					rel="stylesheet">
+					<link
+						href="$webRoot/resources/css/plugins/sweetalert/sweetalert.css"
+						rel="stylesheet">
+						<link
+							href="$webRoot/resources/css/plugins/bootstrapvalidator/bootstrapValidator.css"
+							rel="stylesheet">
+							<link href="$webRoot/resources/css/plugins/iCheck/custom.css"
+								rel="stylesheet">
+								<link
+									href="$webRoot/resources/css/plugins/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css"
+									rel="stylesheet">
+									<link
+										href="$webRoot/resources/css/plugins/poshytip/tip-yellowsimple/tip-yellowsimple.css"
+										rel="stylesheet">
+</head>
+
+<style>
+.logo {
+	float: left;
+	width: 20%;
+	height: 108px;
+	z-index: -1;
+}
+
+.logo img {
+	/*width: 100%;*/
+	height: 100%;
+}
+
+.lead {
+	float: right;
+	width: 80%;
+}
+
+.lead li {
+	background-color: #333333;
+}
+
+.regist-icon {
+	font-size: 128px;
+}
+
+.regist-icon a :HOVER {
+	background-color: #ffffff;
+	color: #6cb0d8;
+}
+
+#user-type {
+	float: right;
+	margin-top: -15px;
+	margin-right: 15px;
+}
+
+#user-name {
+	margin-top: 10px;
+	text-align: center;
+}
+
+.userInfo {
+	padding-bottom: 50px;
+}
+
+.logoff-div {
+	float: right;
+	margin-right: -230px;
+	margin-top: -140px;
+}
+</style>
+
+<body class="bs_bg">
+	<!-- top内容开始 -->
+	<div class="top">
+		<div class="top_a">
+			<div class="top_a3">
+				<span style="color: red;">$!user.nickName</span>您好，欢迎来到易找兼职网！ <span
+					style="font-size: 14px; font-weight: bold; color: #424242">合肥市&nbsp;</span>
+			</div>
+			<div class="top_a1"></div>
+		</div>
+		<div class="top_bg">
+			<div class="top_bga">
+				<div class="logo">
+					<a href="$!webRoot/part/index"><img
+						src="$!webRoot/resources/images/logo.jpg"></img></a>
+				</div>
+				<div class="lead">
+					<div class="top_bga_1"></div>
+					<div class="top_bga_2">
+						<ul>
+							<a href="$!webRoot/part/contact-us"><li>联系我们</li></a>
+							<a href="$!webRoot/part/myInfo"><li>我的信息</li></a>
+							<a href="$!webRoot/part/more-job"><li>职位列表</li></a>
+							<a href="index.html"><li><i class="fa "></i>&nbsp;主页</li></a>
+						</ul>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+	<!-- top内容结束 -->
+
+	<div class="center_a">
+		<div class="center_blank"></div>
+		<div class="center_b">
+			<div class="gray-bg">
+				<div class="row m-t-lg">
+					<div class="col-sm-6">
+
+						<div>
+							<div class="row">
+								<div class="col-md-6">
+									<div class="ibox-content text-center">
+										<h1>$!user.nickName</h1>
+										<div class="m-b-sm">
+											<img alt="image" class="img-circle" id="user-icon-img"
+												src="$!user.icon" style="width: 200px; height: 200px">
+										</div>
+										<p class="font-bold">#if($!user.type == 0) 普通会员 #else 招聘方
+											#end</p>
+
+										<div class="text-center">
+											<a class="btn btn-xs btn-primary modify-icon"><i
+												class="fa fa-edit"></i>修改头像</a>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="widget lazur-bg p-xl">
+
+										<h2>会员明信片</h2>
+										<ul class="list-unstyled m-t-md">
+
+											<li><span class="fa fa-user m-r-xs"></span> <label>userName:</label>
+												$!user.userName</li>
+											<li><span class="fa fa-unlock-alt m-r-xs"></span> <label>password:</label>
+												********</li>
+											<li><span class="fa fa-wechat m-r-xs"></span> <label>wechat:</label>
+												#if($!user.wechat) $!user.wechat #else 暂无... #end</li>
+											<li><span class="fa fa-envelope m-r-xs"></span> <label>email:</label>
+												#if($!user.email) $!user.email #else 暂无... #end</li>
+											<li><span class="fa  m-r-xs"></span> <label>address:</label>
+												#if($!user.address) $!user.address #else 暂无... #end</li>
+											<li><span class="fa fa-phone m-r-xs"></span> <label>tel:</label>
+												(+86) #if($!user.telphone) $!user.telphone #else 暂无... #end
+											</li>
+										</ul>
+										<div class="text-center">
+											<a class="btn btn-xs btn-danger modify-info"><i
+												class="fa fa-edit"></i>修改资料</a>
+										</div>
+									</div>
+
+								</div>
+							</div>
+
+						</div>
+					</div>
+
+
+
+					<div class="col-sm-6">
+						<div class="ibox float-e-margins">
+
+							<div class="ibox-content">
+								<div>
+									<table class="table">
+										<tbody>
+											<tr>
+												<td>
+													<button type="button" class="btn btn-danger m-r-sm">$!jobsCount</button>
+													已发布
+												</td> #if($!user.type == 0)
+												<td>
+													<button type="button" class="btn btn-primary m-r-sm">$!applyJobsCount</button>
+													已申请
+												</td> #end
+
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<div class="ibox-content">
+									<h4>已发布</h4>
+									<table class="table table-bordered publish-table">
+										<thead>
+											<tr>
+												<th>序号</th>
+												<th>标题</th>
+												<th>发布时间</th>
+											</tr>
+										</thead>
+										<tbody>
+											<!-- #if($jobs)
+												<tr>
+													<td colspan="3" style="text-align: center;">无数据...</td>
+												</tr>
+											#end -->
+											#foreach($!job in $!jobs)
+												<tr>
+													<td>$velocityCount</td>
+													<td>$!job.title</td>
+													<td>$!date.format('yyyy-MM-dd ',$!job.gmtCreated)</td>
+												</tr>
+												#end
+										</tbody>
+									</table>
+									
+									<h4>已申请</h4>
+									<table class="table table-bordered publish-table apply-table">
+										<thead>
+											<tr>
+												<th>序号</th>
+												<th>标题</th>
+												<th>发布时间</th>
+											</tr>
+										</thead>
+										<tbody>
+ 											#if("$!applyJobs" == "")
+												<tr>
+													<td colspan="3" style="text-align: center;">无数据...</td>
+												</tr>
+											#end
+										#foreach($!applyJob in $!applyJobs)
+												<tr>
+													<td>$velocityCount</td>
+													<td>$!applyJob.title</td>
+													<td>$!date.format('yyyy-MM-dd ',$!applyJob.gmtCreated)</td>
+												</tr>
+											#end
+										</tbody>
+									</table>
+									
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+	<script type="text/javascript"
+		src="$!webRoot/resources/js/jquery-2.1.1.min.js"></script>
+	<script src="$webRoot/resources/js/plugins/bootstrap/bootstrap.min.js"></script>
+	<script type="text/javascript"
+		src="$!webRoot/resources/js/demo-web/common/utils/modalUtil.js"></script>
+	<script type="text/javascript"
+		src="$!webRoot/resources/js/plugins/sweetalert/sweetalert.min.js"></script>
+	<script type="text/javascript"
+		src="$!webRoot/resources/js/demo-web/common/utils/ajaxUtil.js"></script>
+	<script type="text/javascript"
+		src="$!webRoot/resources/js/demo-web/common/utils/ajaxUtil.js"></script>
+	<script type="text/javascript"
+		src="$!webRoot/resources/js/search/area.js"></script>
+	<script type="text/javascript"
+		src="$!webRoot/resources/js/search/location.js"></script>
+	<script type="text/javascript"
+		src="$!webRoot/resources/js/search/select2.js"></script>
+	<script type="text/javascript"
+		src="$!webRoot/resources/js/search/select2_locale_zh-CN.js"></script>
+	<script type="text/javascript"
+		src="$!webRoot/resources/js/jquery.touchSlider.js"></script>
+	<script type="text/javascript" src="$!webRoot/resources/js/js.js"></script>
+	<script type="text/javascript"
+		src="$!webRoot/resources/js/ks-switch.pack.js"></script>
+	<script>
+		var pic;
+		//修改头像
+		$(".modify-icon")
+				.click(
+						function() {
+							loadModal(
+									"修改头像",
+									"600px",
+									"$!webRoot/account/add-user-icon",
+									null,
+									function() {
+										$(".save")
+												.click(
+														function() {
+															var icon = pic;
+															var id = $!user.id;
+															$.post(
+																			"$!webRoot/account/modify-icon",
+																			{
+																				'id' : id,
+																				'icon' : icon
+																			},
+																			function(
+																					ret,
+																					stats) {
+																				if (stats == "success") {
+																					if (ret.code === 200) {
+																						$(
+																								"#user-icon-img")
+																								.attr(
+																										"src",
+																										ret.data);
+																						closeModal();
+																						swal(
+																								"修改成功",
+																								"修改成功",
+																								"success");
+																					} else {
+																						swal(
+																								"修改失败！",
+																								ret.error,
+																								"error");
+																					}
+																				}
+																			});
+														});
+
+									});
+						});
+
+		//修改资料
+		$(".modify-info")
+				.click(
+						function() {
+							loadModal(
+									"修改资料",
+									"600px",
+									"$!webRoot/account/modify-info-view",
+									null,
+									function() {
+										$(".save")
+												.click(
+														function() {
+															var password = $(
+																	"input[name='entity.password']")
+																	.val();
+															var repassword = $(
+																	"input[name='re-password']")
+																	.val();
+															if (password != repassword) {
+																swal(
+																		"修改失败",
+																		"密码不一致！",
+																		"error");
+																return false;
+															}
+															$
+																	.post(
+																			"$!webRoot/account/do-modify",
+																			$(
+																					"#modify-form")
+																					.serialize(),
+																			function(
+																					ret,
+																					stats) {
+																				if (stats == "success") {
+																					if (ret.code === 200) {
+																						closeModal();
+																						swal(
+																								{
+																									title : "修改成功",
+																									text : "success",
+																									showCancelButton : false,
+																									confirmButtonColor : "#1ab394",
+																									confirmButtonText : "确认",
+																								},
+																								function(
+																										isConfirm) {
+																									if (isConfirm) {
+																										window.location
+																												.reload();
+																									}
+																								});
+
+																					} else {
+																						swal(
+																								"修改失败！",
+																								ret.error,
+																								"error");
+																					}
+																				}
+																			});
+														});
+
+									});
+						});
+	</script>
+
+
+
+</body>
+
+</html>
+
+

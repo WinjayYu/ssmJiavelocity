@@ -1,0 +1,27 @@
+.module-frame {
+    height:150px;
+    width:100%;
+    border:1px solid #ccc;
+    display:inline-block;
+    margin:0 auto;
+}
+.module-close {
+    position: absolute;
+    height:23px;
+    width:100%;
+    background-color: #999999;
+    opacity: 0.8;
+    display:none;
+}
+.module-image {
+    float:left;
+    height:100%;
+    width:100%;
+}
+.module-description {
+    height: 70% !important;
+    width:80%;
+    margin-left:10%;
+    margin-top:10%;
+    resize: none;
+}

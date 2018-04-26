@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>后台管理中心</title>  
+    <link rel="stylesheet" href="$!webRoot/resources/css/layui.css">
+    <link href="$webRoot/resources/css/plugins/sweetalert/sweetalert.css" rel="stylesheet">
+    
+    <script src="$!webRoot/resources/js/jquery.js"></script>
+    <script type="text/javascript" src="$!webRoot/resources/js/plugins/sweetalert/sweetalert.min.js"></script>
+    
+	
+</head>
+<body>
+
+<div class="layui-fluid">
+    <div class="layui-row layui-col-space15">
+      <div class="layui-col-md12">
+        <div class="layui-card">
+          <div class="layui-card-header">职位列表</div>
+          <div class="layui-card-body">
+            
+            <table class="layui-hide" id="test-table-operate" lay-filter="test-table-operate"></table>
+            
+            <script type="text/html" id="test-table-operate-barDemo">
+              <a class="layui-btn layui-btn-xs" lay-event="edit">数据详情</a>
+              <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+            </script>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<script src="$!webRoot/resources/js/layui.all.js"></script>
+  <script>
+  
+  layui.use('table', function(){
+	  var table = layui.table;
+	  
+	  //第一个实例
+	  table.render({
+	    elem: '#test-table-operate'
+	    ,method:'post'
+	    ,url: '$!webRoot/admin/joblist' //数据接口
+	    ,request: {
+	    	pageName: 'pageNum',
+	    	limitName: 'pageSize'
+	    }
+	    ,response:{
+	    	statusCode:200
+	    }
+	    ,page: true //开启分页
+	    ,cols: [[ //表头
+	              {type:'checkbox', fixed: 'left'}
+	              ,{field:'id', title: 'ID', sort: true, fixed: 'left'}
+	              ,{field:'title', title: '标题'}
+	              ,{field:'lessSalary', title: '最低薪水', sort: true}
+	              ,{field:'mastSalary', title: '最高薪水', sort: true}
+	              ,{field:'salaryType', title: '薪水类型', templet: function(d){
+	            	  var b = d.salaryType;
+	            	  if (b == 1) {
+	            		  return '小时'
+	            	  } else if (b == 2) {
+	            		  return '天'
+	            	  } else if (b == 3) {
+	            		  return '月'
+	            	  } else {
+	            		  return '年'
+	            	  };
+	              } }
+	              ,{field:'needPeople', title: '招聘人数', sort: true}
+	              ,{field:'lessEducation', title: '最低学历', sort: true}
+	              ,{field:'lessExperience', title: '最低经验', sort: true}
+	              ,{field:'adress', title: '工作地点', sort: true}
+	              ,{field:'telphone', title: '联系电话', sort: true}
+	              ,{width:178, align:'center', fixed: 'right', toolbar: '#test-table-operate-barDemo'}
+	    ]]
+	  });
+	//监听表格复选框选择
+	    table.on('checkbox(test-table-operate)', function(obj){
+	      console.log(obj)
+	    });
+	    //监听工具条
+	    table.on('tool(test-table-operate)', function(obj){
+	      var data = obj.data;
+	      var id = data.id;
+	      if(obj.event === 'del'){
+	        layer.confirm('真的删除行么', function(index){
+	          obj.del();
+	          layer.close(index);
+	          var url = "$!webRoot/admin/deleteJob"
+	          $.post(url, {'id': id}, function(ret, stats){
+	        	  
+	          });
+	        });
+	      } else if(obj.event === 'edit'){
+	        layer.alert('数据详情：<br>'+ JSON.stringify(data))
+	      }
+	    });
+	    
+	    $('.test-table-operate-btn .layui-btn').on('click', function(){
+	      var type = $(this).data('type');
+	      active[type] ? active[type].call(this) : '';
+	    });
+	});
+  
+    
+  
+  </script>
+  </body>
+  </html>

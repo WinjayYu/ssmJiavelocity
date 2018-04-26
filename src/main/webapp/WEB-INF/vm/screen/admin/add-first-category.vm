@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>后台管理中心</title>
+<link rel="stylesheet" href="$!webRoot/resources/css/layui.css">
+<link href="$webRoot/resources/css/plugins/sweetalert/sweetalert.css"
+	rel="stylesheet">
+<link href="$webRoot/resources/css/plugins/bootstrap/bootstrap.min.css"
+	rel="stylesheet">
+<script src="$!webRoot/resources/js/jquery-2.1.1.min.js"></script>
+<script type="text/javascript"
+	src="$!webRoot/resources/js/plugins/sweetalert/sweetalert.min.js"></script>
+
+
+</head>
+<style>
+.cont {
+	margin-left: 100px;
+	margin-top: 30px;
+}
+
+
+.pic-btn {
+	float: right;
+	margin-top: -50px;
+}
+</style>
+<body>
+	<div class="layui-col-md6 cont">
+		<form class="layui-form" id="news-form">
+			<div class="layui-form-item">
+				<label class="layui-form-label">名称</label>
+				<div class="layui-input-block ">
+					<input type="text" name="name" required lay-verify="required"
+						placeholder="请输入名称" autocomplete="off" class="layui-input">
+					<input type="hidden" name="level" value="1">
+					<input type="hidden" name="parentId" value="-1">
+					<input type="hidden" name="parentName" value="无">
+					<input type="hidden" name="firstLevelId" value="-1">
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<div class="layui-input-block">
+					<button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
+					<button type="reset" class="layui-btn layui-btn-primary">重置</button>
+				</div>
+			</div>
+		</form>
+	</div>
+	<script src="$!webRoot/resources/js/layui.all.js"></script>
+	<script src="$webRoot/resources/js/plugins/bootstrap/bootstrap.min.js"></script>
+	<script src="$webRoot/resources/js/demo-web/common/utils/ajaxUtil.js"></script>
+	<script>
+		//Demo
+		layui.use('form', function() {
+			var form = layui.form;
+
+			//监听提交
+			form.on('submit(formDemo)', function(data) {
+				var formData = JSON.stringify(data.field);
+				ajax("$!webRoot/admin/add-category","POST", formData, function(ret, stats) {
+					if (stats == "success") {
+						if (ret.code === 200) {
+							swal("添加成功", "添加成功", "success");
+						} else {
+							swal("添加失败！", ret.error, "error");
+						}
+					}
+				});
+				return false;
+			});
+		});
+
+	</script>
+
+
+
+</body>
+</html>

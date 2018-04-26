@@ -1,0 +1,98 @@
+<style>
+input[type='radio'] {
+	width: 18px;
+	height: 18px;
+}
+</style>
+
+<div class="ibox-content">
+	<form method="post" class="form-horizontal" id="regist-form">
+		<div class="form-group">
+			<label class="col-sm-2 control-label">注册类型</label>
+
+			<div class="col-sm-8">
+				<select class="form-control m-b" name="entity.type">
+					<option value="0">普通会员</option>
+					<option value="1">招聘方</option>
+				</select>
+
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-2 control-label">账号</label>
+			<div class="col-sm-8">
+				<input type="text" name="entity.userName" class="form-control"
+					placeholder="请输入账号">
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-2 control-label">密码</label>
+			<div class="col-sm-8">
+				<input type="password" name="entity.password" class="form-control"
+					placeholder="请输入密码">
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-2 control-label">确认密码</label>
+			<div class="col-sm-8">
+				<input type="password" class="form-control" name="re-password"
+					placeholder="请再次输入密码">
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-2 control-label">昵称</label>
+			<div class="col-sm-8">
+				<input type="text" name="entity.nickName" class="form-control"
+					placeholder="请输入昵称">
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-2 control-label">性别</label>
+			<div class="col-sm-8">
+				<div class="radio radio-success radio-inline">
+					<input type="radio" id="male" value="1" name="entity.sex"
+						checked=""> <label for="inlineRadio1"> 男 </label>
+				</div>
+				<div class="radio radio-danger radio-inline">
+					<input type="radio" id="female" value="2" name="entity.sex">
+					<label for="inlineRadio1"> 女 </label>
+				</div>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-2 control-label">微信</label>
+			<div class="col-sm-8">
+				<input type="text" name="entity.wechat" class="form-control"
+					placeholder="请输入微信">
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-2 control-label">QQ</label>
+			<div class="col-sm-8">
+				<input type="text" name="entity.qq" class="form-control"
+					placeholder="请输入QQ">
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-2 control-label">邮箱</label>
+			<div class="col-sm-8">
+				<input type="text" name="entity.email" class="form-control"
+					placeholder="请输入邮箱">
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-2 control-label">电话</label>
+			<div class="col-sm-8">
+				<input type="text" name="entity.telphone" class="form-control"
+					placeholder="请输入电话">
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-2 control-label">自我介绍</label>
+			<div class="col-sm-8">
+				<textarea id="ccomment" name="entity.signSelf" class="form-control"
+					required="" aria-required="true"></textarea>
+			</div>
+		</div>
+	</form>
+</div>

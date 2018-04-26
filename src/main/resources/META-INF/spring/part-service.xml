@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+    xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:task="http://www.springframework.org/schema/task"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/task
+		http://www.springframework.org/schema/task/spring-task-4.0.xsd
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop.xsd"
+        default-autowire="byName" default-lazy-init="false">
+    
+    <!-- 自动扫描 ,将带有注解的类 纳入spring容器管理 -->
+    <context:component-scan base-package="com.part.service" />
+
+    <aop:config proxy-target-class="true" />
+
+    <!--spring 异步服务-->
+    <task:annotation-driven/>
+    
+    <!-- 引入配置文件 -->
+    <bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="locations">
+            <list>
+                <value>classpath:/part_service.properties</value>
+            </list>
+        </property>
+    </bean>
+    
+    <import resource="classpath*:META-INF/spring/data-source.xml" />
+    <import resource="classpath*:META-INF/spring/spring-thread.xml" />
+</beans>
