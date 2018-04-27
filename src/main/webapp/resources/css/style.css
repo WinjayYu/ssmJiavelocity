@@ -94,7 +94,7 @@ a:hover {
 }
 
 .bs_bg {
-    max-width: 994px;
+    max-width: 750px;
     margin: 0 auto;
 }
 
@@ -668,6 +668,7 @@ div.flicking_con a.on {
     border-top: 1px solid #d9d9d9;
     border-bottom: 1px solid #d9d9d9;
     float: left;
+    width: 100%;
 }
 
 .bz_a {
@@ -943,39 +944,39 @@ div.flicking_con a.on {
 }
 
 .bft_f {
-    width: 1000px;
+    width: 100%;
     border-top: 1px solid #ee7510;
     background: #fff;
     float: left;
 }
 
 .bft_f_1 {
-    width: 1000px;
+    width: 100%;
     height: 43px;
     background: #f3f3f3;
     float: left;
 }
 
 .bft_f_1 li {
-    width: 200px;
+    width: 20%;
     height: 43px;
     line-height: 43px;
     font-weight: bold;
     float: left;
     text-indent: 20px;
     color: #363636;
-    letter-spacing: 2px;
+    white-space: nowrap;
 }
 
 .bft_f_2 {
-    width: 1000px;
+    width: 100%;
     height: 43px;
     float: left;
     font-size: 12px;
 }
 
 .bft_f_2 li {
-    width: 200px;
+    width: 20%;
     height: 46px;
     line-height: 48px;
     border-bottom: 1px solid #edeef0;
@@ -996,11 +997,11 @@ div.flicking_con a.on {
 }
 
 .bft_f_3 {
-    width: 600px;
+    width: 80%;
     height: 51px;
     float: left;
     font-size: 16px;
-    margin-left: 200px;
+    /*margin-left: 200px;*/
 }
 
 .bft_f_3 li {

@@ -15,6 +15,7 @@
 <link href="$webRoot/resources/css/plugins/iCheck/custom.css" rel="stylesheet">
 <link href="$webRoot/resources/css/plugins/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css" rel="stylesheet">
 <link href="$webRoot/resources/css/plugins/poshytip/tip-yellowsimple/tip-yellowsimple.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
 
 </head>
 
@@ -63,7 +64,7 @@
 }
 .search-div {
 	float:right;
-	margin-left:800px;
+	margin-left:54%;
 	margin-bottom: 20px;
 }
 </style>
@@ -82,7 +83,7 @@
     		<div class="lead">
     			<div class="top_bga_1"></div>
            		<div class="top_bga_2">
-            	<ul>
+            	<ul class="clear">
                     <a href="$!webRoot/part/contact-us"><li>联系我们</li></a>
                     <a href="$!webRoot/part/myInfo"><li>我的信息</li></a>    
                     <a href="$!webRoot/part/more-job"><li>职位列表</li></a>

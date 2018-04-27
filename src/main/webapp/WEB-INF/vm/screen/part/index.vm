@@ -164,7 +164,7 @@
 <!-- 招聘信息结束  -->
 <!-- 内容开始 -->
 <div class="nr clear">
-	<div class="newPos">
+	<div class="newPos" >
     	<div class="newPos_a">最新职位</div>
         <div class="newPos_c new_job">
         	<ul>
@@ -184,7 +184,7 @@
         			<span class="on">我要登录</span>
         		</dt>
         		<dt style="display: none;" class="userInfo-part">
-        			<span style="width:486px" class="on">我的信息</span>
+        			<span class="on">我的信息</span>
         		</dt>
         	</div>
                 <dt style="width:100%; height:2px; float:left"></dt>
@@ -286,7 +286,7 @@
         <!-- 标签切换结束 -->
     </div>
     
-    <div class="newPos">
+    <div class="newPos" style="width: 100%">
     	<div class="newPos_a">最新职位</div>
         <div class="newPos_b">
             <div class="newPos_b_title"><p>培训类别：职业培训</p><p>培训费用：<span>￥1000元</span></p>  <p>培训时间：11月20日</p></div>
