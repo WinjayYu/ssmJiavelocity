@@ -255,7 +255,8 @@ public class AdminController {
         	}
         	// 生成jpeg图片
         	imgFilePath = basePath +"\\" + fileName;
-        	imgPath = "http://localhost:8081/part-web/resources/imgs/news/" + fileName;
+//        	imgPath = "http://localhost:8081/part-web/resources/imgs/news/" + fileName;
+			imgPath = "http://localhost:8081/resources/imgs/news/" + fileName;
         	OutputStream out=new FileOutputStream(imgFilePath);
 
         	out.write(imageByte);

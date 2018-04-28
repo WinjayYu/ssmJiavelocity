@@ -128,10 +128,10 @@
                 	</div>
                 	<div class="main_image">
                 		<ul style="width: 353px; overflow: visible;">
-                			<a href="zzy.html" style="float: none; display: block; position: absolute; top: 0px; left: -353px; width: 353px;"><li><img style="width:100%;height:100%;" src="$!webRoot/resources/imgs/default2.jpg"></li></a>
-                			<a href="zzy.html" style="float: none; display: block; position: absolute; top: 0px; left: 0px; width: 353px;"><li><img style="width:100%;height:100%;" src="$!webRoot/resources/imgs/default.gif"></li></a>
-                			<a href="zzy.html" style="float: none; display: block; position: absolute; top: 0px; left: -1059px; width: 353px;"><li><span class="img_3"></span></li></a>
-                			<a href="zzy.html" style="float: none; display: block; position: absolute; top: 0px; left: -706px; width: 353px;"><li><span class="img_4"></span></li></a>
+                			<a href="zzy.html" style="float: none; display: block; position: absolute; top: 0px; left: -353px; width: 353px;"><li><img class="news-img" style="width:100%;height:100%;" src=""></li></a>
+                			<a href="zzy.html" style="float: none; display: block; position: absolute; top: 0px; left: 0px; width: 353px;"><li><img class="news-img"style="width:100%;height:100%;" src=""></li></a>
+                			<a href="zzy.html" style="float: none; display: block; position: absolute; top: 0px; left: -1059px; width: 353px;"><li><img class="news-img" src="" alt=""></li></a>
+                			<a href="zzy.html" style="float: none; display: block; position: absolute; top: 0px; left: -706px; width: 353px;"><li><img class="news-img" src="" alt=""></li></a>
                 		</ul>
                 		<a href="javascript;" id="btn_prev" style="width: 353px; overflow: visible;"></a>
                 		<a href="javascript;" id="btn_next" style="width: 353px; overflow: visible;"></a>
@@ -421,6 +421,20 @@
             }
         });
 	})
+
+	// 新闻列表
+	$.post('$!webRoot/admin/newslist', {page: 1}, function (ret, stats) {
+        if (stats == "success") {
+            if (ret.code === 200) {
+                console.log(ret)
+				$('.news-img').each(function(i, v) {
+					$(this).attr('src', ret.data[i].picUrl);
+				})
+            } else {
+                swal("获取新闻列表失败！", ret.error, "error");
+            }
+        }
+    })
 	
 	//注销
 	$(document).on("click", ".logoff-btn", function(){

@@ -1222,9 +1222,10 @@ div.flicking_con_a a.on {
 
 /* 帮主 */
 .bzz {
-    width: 998px;
+    /*width: 998px;*/
     border: 1px solid #d7d7d7;
     background: #fff;
+    text-align: center;
 }
 
 .bzz_a {
@@ -1261,7 +1262,7 @@ div.flicking_con_a a.on {
 }
 
 .bzz_c {
-    width: 430px;
+    /*width: 430px;*/
     height: 115px;
     line-height: 26px;
     border-bottom: 1px dashed #b6b6b6;
@@ -1281,7 +1282,7 @@ div.flicking_con_a a.on {
 }
 
 .bzz_d {
-    width: 430px;
+    /*width: 430px;*/
     height: 270px;
     line-height: 26px;
     font-size: 14px;
@@ -1302,9 +1303,9 @@ div.flicking_con_a a.on {
 }
 
 .bzz_e {
-    width: 50px;
-    height: 100px;
-    float: left
+    /*width: 50px;*/
+    /*height: 100px;*/
+    /*float: left*/
 }
 
 /* 注册 */
@@ -1623,6 +1624,10 @@ td {
     float: right;
     margin-left: 54%;
     margin-bottom: 20px;
+}
+
+.main_image img {
+    width: 100%;
 }
 
 @media screen and (max-width: 400px){

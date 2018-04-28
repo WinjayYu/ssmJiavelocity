@@ -5,7 +5,9 @@
 <title>易找网 — 首页</title>
 <link href="$!webRoot/resources/css/select2.css" rel="stylesheet" />
 <link rel="stylesheet" href="$!webRoot/resources/css/style.css" />
-<link href="$webRoot/resources/css/plugins/bootstrap/bootstrap.min.css"
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+
+    <link href="$webRoot/resources/css/plugins/bootstrap/bootstrap.min.css"
 	rel="stylesheet">
 	<link href="$webRoot/resources/css/plugins/style/style.min.css"
 		rel="stylesheet">

@@ -150,6 +150,7 @@ public class PartTimeController {
 		
 		return contactService.add(entity);
 	}
+
 	
 	/**
      * 上传图片 

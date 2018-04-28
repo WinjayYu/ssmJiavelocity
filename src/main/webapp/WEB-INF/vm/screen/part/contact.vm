@@ -3,7 +3,9 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>易找网 — 首页</title>
-<link href="$!webRoot/resources/css/select2.css" rel="stylesheet"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+
+    <link href="$!webRoot/resources/css/select2.css" rel="stylesheet"/>
 <link rel="stylesheet" href="$!webRoot/resources/css/style.css" />
 <link href="$webRoot/resources/css/plugins/bootstrap/bootstrap.min.css" rel="stylesheet">
 <link href="$webRoot/resources/css/plugins/style/style.min.css" rel="stylesheet">
@@ -62,7 +64,7 @@
 	margin-top: -140px;
 }
 .contact-c{
-	margin-left: 300px;
+	/*margin-left: 300px;*/
 }
 </style>
 
@@ -80,7 +82,7 @@
     		<div class="lead">
     			<div class="top_bga_1"></div>
            		<div class="top_bga_2">
-            	<ul>
+            	<ul class="clear">
                     <a href="$!webRoot/part/contact-us"><li>联系我们</li></a>
                     <a href="$!webRoot/part/myInfo"><li>我的信息</li></a>    
                     <a href="$!webRoot/part/more-job"><li>职位列表</li></a>
@@ -113,7 +115,7 @@
                    
                     <p class="item">
                     	<div class="bzz_e">内容：</div>
-						<textarea style="width:360px; height:100px; border:1px solid #c9c9c9; color:#666; padding:5px;" id="remark"></textarea>
+						<textarea style="height:100px; border:1px solid #c9c9c9; color:#666; padding:5px;" id="remark"></textarea>
                     </p>　
                     <button type="button" class="btn btn-w-m btn-primary commit-c">提交</button>
                 </div>

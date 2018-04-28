@@ -57,7 +57,7 @@ public class NewsServiceImpl implements NewsService {
 			entity = new NewsEntity();
 		}
 		NewsDOExample example = new NewsDOExample();
-		example.setOrderByClause("gmt_created");
+		example.setOrderByClause("`gmt_created` DESC");
 		if (pager == null) {
 			pager = new PageVO();
 		}
